@@ -1,0 +1,52 @@
+.card {
+    width: 325px;
+    background-color: #fff;
+    height: 382px;
+    border: solid 1px gray;
+}
+
+.card-img {
+    width: 325px;
+    height: 195px;
+    background-color: rgba(207, 183, 108, 0.721);
+}
+
+.workerContainer {
+    padding: 12px;
+    display: flex;
+    height: 40px;
+    overflow: hidden;
+    font-size: 10px
+}
+
+.user-img {
+    width: 24px;
+    height: 24px;
+    background-color: yellow;
+    border-radius: 50%;
+    border: solid 1px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.name-container {
+    margin-left: 10px
+}
+
+.description {
+    padding: 12px;
+}
+
+.rate {
+    padding-left: 12px;
+    color: gold;
+    border-bottom: solid gray .5px
+}
+
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    color: gray
+}

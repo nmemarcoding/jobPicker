@@ -1,0 +1,23 @@
+.firstSection {
+    height: 91.9vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white
+}
+
+.secondSection {
+    overflow: scroll;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.job {
+    margin-bottom: 10px;
+}
+
+.thirdSection {
+    height: 100vh;
+}

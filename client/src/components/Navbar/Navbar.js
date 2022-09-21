@@ -4,9 +4,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Become a Seller', href: '#', current: true },
-  { name: 'Sing in', href: '#', current: false },
-  { name: 'Join', href: '#', current: false },
+  { name: 'Become a jobPicker', href: '#', current: true },
+  { name: 'Sign in', href: 'login', current: false },
+  { name: 'Join', href: 'signup', current: false },
   
 ]
 
@@ -124,6 +124,7 @@ export default function Navbar() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
+           
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <Disclosure.Button
