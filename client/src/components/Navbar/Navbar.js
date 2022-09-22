@@ -6,7 +6,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 const navigation = [
   { name: 'Become a jobPicker', href: '#', current: true },
   { name: 'Sign in', href: 'login', current: false },
-  { name: 'Join', href: 'signup', current: false },
+  ,
   
 ]
 

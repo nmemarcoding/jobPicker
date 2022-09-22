@@ -1,7 +1,7 @@
 import React from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {AiFillFacebook} from 'react-icons/ai'
-
+import { Link } from "react-router-dom";
 
 
 export default function SignUp() {
@@ -34,7 +34,7 @@ export default function SignUp() {
                 <input className='border relative bg-gray-100 p-2' type="password" />
             </div>
             <button className='w-full py-3 mt-8 bg-indigo-600 hover:bg-indigo-500 relative text-white'>Sign Up</button>
-            <p className='text-center mt-8' ><a href="/login">Login</a></p>
+            <Link to ="/login"><button className='w-full py-3 mt-8 bg-gray-300 hover:bg-indigo-500 relative text-white'>Login</button></Link>
         </form>
     </div>
     </div>

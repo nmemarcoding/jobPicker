@@ -1,6 +1,7 @@
 import React from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {AiFillFacebook} from 'react-icons/ai'
+import { Link } from "react-router-dom";
 
 
 
@@ -26,8 +27,8 @@ export default function Login() {
                 <input className='border relative bg-gray-100 p-2' type="password" />
             </div>
             <button className='w-full py-3 mt-8 bg-indigo-600 hover:bg-indigo-500 relative text-white'>Sign In</button>
-            <p className='flex items-center mt-2'><input className='mr-2' type="checkbox"  />Remember Me</p>
-            <p className='text-center mt-8'>Not a member? <a href="/signup">Sign up now</a></p>
+            <Link to ="/signup"><button className='w-full py-3 mt-8 bg-gray-300 hover:bg-indigo-500 relative text-white'>Sign Up</button></Link>
+            
         </form>
     </div>
     </div>

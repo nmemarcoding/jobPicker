@@ -2,7 +2,65 @@
     height: 91.9vh;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0 20px;
+}
+
+.search-title {
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Arial
+}
+
+.search_container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-input {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.search_btn {
+    background-color: #1dbf73;
+    width: 100px;
+    color: white;
+    padding: 5px;
+}
+
+.pupular_container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.populer_sign {
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+.popular_btn {
+    border: solid 1px;
+    padding: 2px 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .secondSection {

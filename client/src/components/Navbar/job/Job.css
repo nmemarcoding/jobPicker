@@ -2,7 +2,9 @@
     width: 325px;
     background-color: #fff;
     height: 382px;
-    border: solid 1px gray;
+    border: solid .5px gray;
+    -webkit-box-shadow: 5px 5px 15px -4px rgba(0, 0, 0, 0.29);
+    box-shadow: 5px 5px 15px -4px rgba(0, 0, 0, 0.29);
 }
 
 .card-img {
@@ -24,7 +26,7 @@
     height: 24px;
     background-color: yellow;
     border-radius: 50%;
-    border: solid 1px;
+    /* border: solid 1px; */
     align-items: center;
     justify-content: center;
     display: flex;
