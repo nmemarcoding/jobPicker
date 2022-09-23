@@ -1,5 +1,5 @@
 .firstSection {
-    height: 91.9vh;
+    height: 94.9vh;
     background-repeat: no-repeat;
     background-size: cover;
     color: black;
@@ -61,6 +61,14 @@
     border-radius: 15px;
     margin-top: 20px;
     margin-left: 10px;
+}
+
+.populer_jobs {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    border: solid 1px gray;
 }
 
 .secondSection {
