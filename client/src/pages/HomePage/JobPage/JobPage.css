@@ -1,0 +1,28 @@
+.slider {
+    display: block;
+}
+
+.jobPage {
+    max-width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    color: #404145;
+    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 20px;
+}
+
+.sellerInfo {
+    display: flex;
+    align-items: center;
+}
+
+img.ziXAPIc {
+    background-color: #b5b6ba;
+    display: block;
+    font-size: 30px;
+}

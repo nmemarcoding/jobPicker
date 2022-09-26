@@ -1,0 +1,975 @@
+body {
+    background: #eee;
+    /* For visibility of elements. */
+}
+
+div {
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    line-height: 24px;
+}
+
+div.jss1467.jss1469 {
+    border: 0;
+    border-radius: 0;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 65vh;
+    left: 0px;
+    line-height: 24px;
+    overflow: hidden;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+div.jss1472 {
+    align-items: center;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+div.jss1473.is-draggable {
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    line-height: 24px;
+    overflow: hidden;
+    width: 100%;
+}
+
+div.jss1475 {
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    line-height: 24px;
+    user-select: none;
+}
+
+div.jss1474.is-selected {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0%;
+    line-height: 24px;
+    margin: auto;
+    min-width: 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+span.jss1480.jss1481.jss1477.jss1479.jss1470 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    overflow: hidden;
+    padding-bottom: 51.2897%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+img.jss1478.jss1470 {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    line-height: 24px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+div.jss1474 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    margin: auto;
+    min-width: 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+span.jss1480.jss1481.jss1477.jss1486.jss1470 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    overflow: hidden;
+    padding-bottom: 51.2897%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/N3-JIlFY3sSiK4kye8mfxXr_G2g\=\/1440x1920\/b683\/b683e4568e934058930d81939c0296d1\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    line-height: 24px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(3) {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    margin: auto;
+    min-width: 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+span.jss1480.jss1481.jss1477.jss1487.jss1470 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    overflow: hidden;
+    padding-bottom: 51.2897%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/IzyE7nb2MUSrOY__pbDlhLKrcKY\=\/1440x1920\/26ce\/26ce84abcc024b77892c557095042810\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    line-height: 24px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4) {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    margin: auto;
+    min-width: 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+span.jss1480.jss1481.jss1477.jss1488.jss1470 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    overflow: hidden;
+    padding-bottom: 51.2897%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/0VeR_9rrILVUz3EAjsQD5NARZV4\=\/1440x1920\/92c1\/92c1d00cd867458ba1440818333428f1\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    line-height: 24px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(5) {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    margin: auto;
+    min-width: 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+span.jss1480.jss1481.jss1477.jss1489.jss1470 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    left: 0px;
+    line-height: 24px;
+    overflow: hidden;
+    padding-bottom: 51.2897%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/_sVxDDUxcrQIpcGiEr8mhCpUmHc\=\/1440x1920\/a782\/a78234086ec4464995d61ef0426940fa\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    line-height: 24px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+div.jss1471 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    inset: 0px;
+    left: 0px;
+    line-height: 24px;
+    pointer-events: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+div.jss1247 {
+    bottom: 76.0547px;
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 1px;
+    left: -10000px;
+    line-height: 24px;
+    overflow: hidden;
+    position: absolute;
+    right: 11439px;
+    top: auto;
+    width: 1px;
+}
+
+h4.MuiTypography-root.MuiTypography-body1.MuiTypography-colorTextPrimary {
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0px;
+    text-transform: none;
+}
+
+div.jss1148 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    left: 0px;
+    line-height: 24px;
+    margin: 0px auto;
+    max-width: 1600px;
+    padding: 0px 24px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+div.jss1153 {
+    bottom: -1px;
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    height: 1px;
+    left: -10000px;
+    line-height: 24px;
+    overflow: hidden;
+    position: absolute;
+    right: 11007px;
+    top: auto;
+    width: 1px;
+}
+
+div.jss1153:focus-within {
+    height: auto;
+    position: static;
+    width: auto;
+}
+
+div.jss1153:focus {
+    height: auto;
+    position: static;
+    width: auto;
+}
+
+button.MuiButtonBase-root.jss1154.jss1189.jss1191.jss1224.jss1150.jss1151 {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    appearance: none;
+    background-color: #00a87e;
+    border-radius: 20px;
+    bottom: -87px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    left: 0px;
+    margin: 0px;
+    min-width: 64px;
+    padding: 8px 12px;
+    position: absolute;
+    right: -95.3906px;
+    text-decoration: none;
+    top: 0px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    vertical-align: middle;
+    z-index: 9999999;
+}
+
+button.MuiButtonBase-root.jss1154.jss1189.jss1191.jss1224.jss1150.jss1151:hover {
+    background-color: #43b893;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+button.MuiButtonBase-root.jss1154.jss1189.jss1191.jss1224.jss1150.jss1151:active {
+    background-color: #00986a;
+    box-shadow: none;
+}
+
+span.MuiTypography-root.jss1156.jss1193.MuiTypography-body1.MuiTypography-colorTextPrimary {
+    box-sizing: inherit;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-family: Lato-Bold, Lato, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0px;
+    text-align: center;
+    text-transform: none;
+}
+
+div.jss1495 {
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    line-height: 24px;
+    margin: 16px 0px 0px;
+}
+
+div.jss1499 {
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    left: 0px;
+    line-height: 24px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+div.jss1500.is-draggable {
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    line-height: 24px;
+    overflow: hidden;
+    width: 100%;
+}
+
+div.jss1496.jss1497 {
+    box-sizing: inherit;
+    color: #121212;
+    display: flex;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    justify-content: flex-start;
+    line-height: 24px;
+    user-select: none;
+}
+
+button.MuiButtonBase-root.jss1511.jss1512.jss1501.jss1502.is-selected {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 6px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    left: 0px;
+    margin: 4px;
+    opacity: 1;
+    padding: 0px;
+    padding-left: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none;
+    top: 0px;
+    user-select: none;
+    vertical-align: middle;
+}
+
+button.MuiButtonBase-root.jss1511.jss1512.jss1501.jss1502.is-selected:hover {
+    opacity: 1;
+}
+
+button.MuiButtonBase-root.jss1511.jss1512.jss1501.jss1502.is-selected:focus {
+    border-color: rgb(0, 152, 106);
+    outline: none;
+}
+
+span.jss1480.jss1481.jss1477.jss1514.jss1513 {
+    border-radius: 4px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 48px;
+    left: 0px;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 48px;
+}
+
+span.jss1480.jss1481.jss1477.jss1514.jss1513:focus {
+    outline: none;
+}
+
+img.jss1478 {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+}
+
+button.MuiButtonBase-root.jss1511.jss1501.is-selected {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 6px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    left: 0px;
+    margin: 4px;
+    opacity: 0.5;
+    padding: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none;
+    top: 0px;
+    user-select: none;
+    vertical-align: middle;
+}
+
+button.MuiButtonBase-root.jss1511.jss1501.is-selected:hover {
+    opacity: 1;
+}
+
+button.MuiButtonBase-root.jss1511.jss1501.is-selected:focus {
+    border-color: rgb(0, 152, 106);
+    outline: none;
+}
+
+span.jss1480.jss1481.jss1477.jss1515.jss1513 {
+    border-radius: 4px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 48px;
+    left: 0px;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 48px;
+}
+
+span.jss1480.jss1481.jss1477.jss1515.jss1513:focus {
+    outline: none;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/Az40IokYF3NrMz_34ezgODsKQSw\=\/250x333\/b683\/b683e4568e934058930d81939c0296d1\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(3) {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 6px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    left: 0px;
+    margin: 4px;
+    opacity: 0.5;
+    padding: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none;
+    top: 0px;
+    user-select: none;
+    vertical-align: middle;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(3):hover {
+    opacity: 1;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(3):focus {
+    border-color: rgb(0, 152, 106);
+    outline: none;
+}
+
+span.jss1480.jss1481.jss1477.jss1516.jss1513 {
+    border-radius: 4px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 48px;
+    left: 0px;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 48px;
+}
+
+span.jss1480.jss1481.jss1477.jss1516.jss1513:focus {
+    outline: none;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/kPP7Kz5ZWFfhFy38uyXXKEv6_Oc\=\/250x333\/26ce\/26ce84abcc024b77892c557095042810\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4) {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 6px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    left: 0px;
+    margin: 4px;
+    opacity: 0.5;
+    padding: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none;
+    top: 0px;
+    user-select: none;
+    vertical-align: middle;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4):hover {
+    opacity: 1;
+}
+
+:root> :nth-child(2)> :nth-child(1)> :nth-child(5)> :nth-child(3)> :nth-child(5)> :nth-child(1)> :nth-child(1)> :nth-child(2)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4)> :nth-child(1)> :nth-child(1)> :nth-child(1)> :nth-child(4):focus {
+    border-color: rgb(0, 152, 106);
+    outline: none;
+}
+
+span.jss1480.jss1481.jss1477.jss1517.jss1513 {
+    border-radius: 4px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 48px;
+    left: 0px;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 48px;
+}
+
+span.jss1480.jss1481.jss1477.jss1517.jss1513:focus {
+    outline: none;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/kg67ffLVzotpphM24BAEv2xqGVU\=\/250x333\/92c1\/92c1d00cd867458ba1440818333428f1\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+}
+
+button.MuiButtonBase-root.jss1511.jss1501.jss1503.is-selected {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 6px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    left: 0px;
+    margin: 4px;
+    opacity: 0.5;
+    padding: 0px;
+    padding-right: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none;
+    top: 0px;
+    user-select: none;
+    vertical-align: middle;
+}
+
+button.MuiButtonBase-root.jss1511.jss1501.jss1503.is-selected:hover {
+    opacity: 1;
+}
+
+button.MuiButtonBase-root.jss1511.jss1501.jss1503.is-selected:focus {
+    border-color: rgb(0, 152, 106);
+    outline: none;
+}
+
+span.jss1480.jss1481.jss1477.jss1518.jss1513 {
+    border-radius: 4px;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: block;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 48px;
+    left: 0px;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 48px;
+}
+
+span.jss1480.jss1481.jss1477.jss1518.jss1513:focus {
+    outline: none;
+}
+
+[src='https\:\/\/thumbor\.offerup\.com\/ywxfKR3HM30yaNVNOBYNCobhuYQ\=\/250x333\/a782\/a78234086ec4464995d61ef0426940fa\.jpg'] {
+    align-items: center;
+    background-color: #fafafa;
+    bottom: 0px;
+    box-sizing: inherit;
+    color: #121212;
+    cursor: pointer;
+    display: flex;
+    font-family: Arial;
+    font-size: 13.3333px;
+    height: 100%;
+    inset: 0px;
+    justify-content: center;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+}
+
+div#skipCarouselPagination.jss1375 {
+    bottom: 105px;
+    box-sizing: inherit;
+    color: #121212;
+    font-family: Lato-Regular, Lato, "Helvetica Neue", Arial, sans-serif;
+    left: 0px;
+    line-height: 24px;
+    position: relative;
+    right: 0px;
+    top: -105px;
+}
+
+@media (min-width: 600px) {
+    div.jss1467.jss1469 {
+        border: 1px solid #e2e2e2;
+        border-radius: 4px;
+        height: 517px;
+    }
+    span.jss1480.jss1481.jss1477.jss1479.jss1470 {
+        object-fit: contain;
+    }
+    img.jss1478.jss1470 {
+        object-fit: contain;
+    }
+    span.jss1480.jss1481.jss1477.jss1486.jss1470 {
+        object-fit: contain;
+    }
+    [src='https\:\/\/thumbor\.offerup\.com\/N3-JIlFY3sSiK4kye8mfxXr_G2g\=\/1440x1920\/b683\/b683e4568e934058930d81939c0296d1\.jpg'] {
+        object-fit: contain;
+    }
+    span.jss1480.jss1481.jss1477.jss1487.jss1470 {
+        object-fit: contain;
+    }
+    [src='https\:\/\/thumbor\.offerup\.com\/IzyE7nb2MUSrOY__pbDlhLKrcKY\=\/1440x1920\/26ce\/26ce84abcc024b77892c557095042810\.jpg'] {
+        object-fit: contain;
+    }
+    span.jss1480.jss1481.jss1477.jss1488.jss1470 {
+        object-fit: contain;
+    }
+    [src='https\:\/\/thumbor\.offerup\.com\/0VeR_9rrILVUz3EAjsQD5NARZV4\=\/1440x1920\/92c1\/92c1d00cd867458ba1440818333428f1\.jpg'] {
+        object-fit: contain;
+    }
+    span.jss1480.jss1481.jss1477.jss1489.jss1470 {
+        object-fit: contain;
+    }
+    [src='https\:\/\/thumbor\.offerup\.com\/_sVxDDUxcrQIpcGiEr8mhCpUmHc\=\/1440x1920\/a782\/a78234086ec4464995d61ef0426940fa\.jpg'] {
+        object-fit: contain;
+    }
+}
+
+@media (hover: none) {
+    button.MuiButtonBase-root.jss1154.jss1189.jss1191.jss1224.jss1150.jss1151:hover {
+        background-color: #00a87e;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    }
+}
