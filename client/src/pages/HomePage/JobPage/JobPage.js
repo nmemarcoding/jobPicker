@@ -2,6 +2,7 @@ import "./JobPage.css"
 
 import ImageSlider from "../../../components/Navbar/ImageSlider/ImageSlider"
 import ReviewsSlider from "../../../components/Navbar/ReviewsSlider/ReviewsSlider"
+import AboutSeller from "../../../components/Navbar/AboutSeller/AboutSeller"
 export default function JobPage() {
   return (
     <div className="jobPage" style={{margin:"20px"}}>
@@ -16,6 +17,9 @@ export default function JobPage() {
       <ImageSlider/>
       <p style={{margin:"20px 0",fontWeight:"bold"}}>What people loved about this seller</p>
       <ReviewsSlider/>
+      <div className="aboutSeller_container">
+        <AboutSeller/>
+      </div>
     </div>
   )
 }
