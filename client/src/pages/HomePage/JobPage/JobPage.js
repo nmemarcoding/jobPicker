@@ -3,6 +3,7 @@ import "./JobPage.css"
 import ImageSlider from "../../../components/Navbar/ImageSlider/ImageSlider"
 import ReviewsSlider from "../../../components/Navbar/ReviewsSlider/ReviewsSlider"
 import AboutSeller from "../../../components/Navbar/AboutSeller/AboutSeller"
+import PlanPrices from "../../../components/Navbar/planPrices/PlanPrices"
 export default function JobPage() {
   return (
     <div className="jobPage" style={{margin:"20px"}}>
@@ -19,6 +20,9 @@ export default function JobPage() {
       <ReviewsSlider/>
       <div className="aboutSeller_container">
         <AboutSeller/>
+      </div>
+      <div className="planPrices_container" style={{marginTop:"20px"}}>
+        <PlanPrices/>
       </div>
     </div>
   )
