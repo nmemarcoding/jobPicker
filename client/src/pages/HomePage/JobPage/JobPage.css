@@ -1,32 +1,54 @@
-.slider {
-    display: block;
-}
-
-.jobPage {
-    max-width: 100%;
-    align-items: center;
-    flex-direction: column;
-}
-
-.title {
-    color: #404145;
-    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 20px;
-}
-
-.sellerInfo {
-    display: flex;
-    align-items: center;
-}
-
-img.ziXAPIc {
-    background-color: #b5b6ba;
-    display: block;
-    font-size: 30px;
-}
-
-.aboutSeller_container {
-    margin-top: 20px;
-}
+        .slider {
+            display: block;
+        }
+        
+        .jobPage {
+            max-width: 70%;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+        }
+        
+        .title {
+            color: #404145;
+            font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 20px;
+        }
+        
+        .sellerInfo {
+            display: flex;
+            align-items: center;
+        }
+        
+        img.ziXAPIc {
+            background-color: #b5b6ba;
+            display: block;
+            font-size: 30px;
+        }
+        
+        .aboutSeller_container {
+            margin-top: 20px;
+        }
+        
+        .planPrices_container {
+            width: 25%;
+            min-width: 300px;
+            margin-right: 20px;
+            margin-top: 152px;
+        }
+        
+        @media screen and (max-width: 1199px) {
+            .planPrices_container {
+                width: 100%;
+                padding-left: 20px;
+                margin-top: 20px;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .jobPage {
+                max-width: 100%;
+                width: 100%;
+            }
+        }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./PlanPrices.css"
 
 export default function PlanPrices() {
     const datas = [{price:"100",description:" 1 Page PSD or Xd or Figma template design+ 3-5 section (coding not included)"},
@@ -13,15 +14,16 @@ export default function PlanPrices() {
         setData(datas[e.target.value])
     }
     return (
-        <>
-        <div style={{border: "1px solid gray",padding:"20px"}}>
+        <div className="planPrice_container">
+        <div style={{padding:"20px"}}>
             <div className="" style={{display: "flex", justifyContent:"space-between"}}>
                 <button onClick = {plan} value="0" className="" >Basic</button>
                 <button onClick = {plan} value="1" className="">Standard</button>
                 <button onClick = {plan} value="2" className="">Premium</button>
             </div>
         </div>
-        <div style={{border: "1px solid gray",padding:"20px"}}>
+        <hr></hr>
+        <div style={{padding:"20px"}}>
             <div className="" style={{fontSize:"30px"}}>${data.price}</div>
             <br></br>
             <p style={{display:"flex"}}>
@@ -31,7 +33,7 @@ export default function PlanPrices() {
             <button style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}}>Continue</button>
         </div>
         
-        </>
+        </div>
         
     )
 }

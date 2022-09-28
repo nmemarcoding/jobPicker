@@ -1,8 +1,9 @@
 import React from 'react'
+import "./AboutSeller.css"
 
 export default function AboutSeller() {
   return (
-    <div>
+    <div className="boxShadow">
        < div className="sellerInfo" style={{marginBottom:"20px"}}>
         <img class="ziXAPIc" src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/054e0ae3ffb03d2f5a279e684d7671f1-1608816882525/d487ab12-5d5a-4667-a058-39891208d8ab.png" alt="shahin_hossen" loading="lazy"/>
         <div className="sellerName" style={{margin:"0 10px"}}>Nima</div> 

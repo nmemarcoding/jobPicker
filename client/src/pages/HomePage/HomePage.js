@@ -9,9 +9,7 @@ const HomePage = () => {
     return (
         <div className="h-screen m-2">
             <Navbar/>
-            <div className="flex bg-gray-200 firstSection" style={{backgroundImage: `url(${background})`,
-
-                                                                   }}>
+            <div className="flex bg-gray-200 firstSection" style={{backgroundImage: `url(${background})`}}>
                 {/* left */}
                 <div className="left-container">
                     <h className="search-title">
@@ -34,7 +32,7 @@ const HomePage = () => {
                 </div>
                 
             </div>
-            <p className="populer_jobs">Popular professional services</p>
+            <p className="populer_jobs boxShadow">Popular professional services</p>
             <div className="flex   secondSection" >
                 <div className="job">
                     <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/196646094/original/989d6c2939c5304ec5b16a9771e35297a46502b1.jpg" />

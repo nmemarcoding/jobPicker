@@ -10,7 +10,7 @@ export default function ImageSlider() {
     }
     return (
         <div>
-            <div className="ImageSlider">
+            <div className="ImageSlider boxShadow">
                 <div className="jss1467 jss1469">
                     <div className="jss1472">
                     <div className="jss1473 is-draggable">
@@ -41,7 +41,7 @@ export default function ImageSlider() {
                     </div>
                 </div>
                 <div className="jss1375" id="skipCarouselPagination" data-testid="skipCarouselPagination" style={{top: "-105px;"}}></div>
-                </div>
+            </div>
         </div>
     )
 }
