@@ -9,16 +9,23 @@ const HomePage = () => {
     return (
         <div className="h-screen m-2">
             <Navbar/>
+            
             <div className="flex bg-gray-200 firstSection" style={{backgroundImage: `url(${background})`}}>
                 {/* left */}
                 <div className="left-container">
-                    <h className="search-title">
+                    {/* <h className="search-title">
                     Find the perfect services for your needs
-                    </h>
-                    <div className="search_container">
-                        <input type="search" placeholder="🔍   Try 'building mobile app'"  className="search-input"/>
-                        <button className="search_btn">search</button>
+                    </h> */}
+                    <h3 className="text-lg font-medium leading-6 text-gray-900">Find the perfect services for your needs</h3>
+                    <br></br>
+                    <div className="form-control">
+                    <div className="input-group" >
+                            <input type="text" placeholder="Search…" className="input input-bordered" style={{width:"100%"}}/>
+                            <button className="btn btn-square">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </button>
                     </div>
+                </div>
                     <div className="pupular_container">
                         <div className="populer_sign">Pupular:</div>
                         <button className="popular_btn">Web Design</button>

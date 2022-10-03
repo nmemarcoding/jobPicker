@@ -26,23 +26,33 @@ const ReviewsSlider = () => {
 
     },[number])
     return (
-        <div className="boxShadow">
-             <div className="" style={{display: 'flex', justifyContent: 'space-between'}}>
-                <div className="" onClick={perReview}>↩</div>
-                <div className="" onClick={nextReview}>↪</div>
-            </div>
-            <div className="resize-slider" style={{display: 'flex',}}>
+        <div className="boxShadow flex items-center" style={{width: '100%',justifyContent: 'space-between'}}>
+            
+            <a href="#slide3" className="btn btn-circle w-5 rounded-full bg-gray-500" onClick={perReview}>❮</a> 
+            <div className="resize-slider" style={{display: 'flex',padding:"20px" ,flexWrap:"wrap"}}>
            
-            {/* <button className=""style={{position:"absolute",left:"20px"}} onClick={perReview}>↩ </button>   */}
-            <img src={data?.image}  className="profile-pict-img" alt="peterlewis98" loading="lazy"/> 
-            <div className="reviewRightContainer" style={{marginLeft:"20px"}}>
-                <div className="reviewRate" style={{display: 'flex'}}>
-                    <div className="">{data?.name} United States  {data?.star}  </div>
+                {/* <button className=""style={{position:"absolute",left:"20px"}} onClick={perReview}>↩ </button>   */}
+                <div className="avatar" style={{marginRight:"10px"}}>
+                    <div className="w-12 rounded-full">
+                        <img src={data?.image} />
+                    </div>
                 </div>
-                <p>{data?.review}</p>
+                
+                <div className="reviewRightContainer" style={{marginLeft:""}}>
+                    <div className="reviewRate" style={{display: 'flex'}}>
+                        <div className="">{data?.name} United States  {data?.star}  </div>
+                    </div>
+                    <hr style={{border: ".1px solid gray",marginTop:"10px"}}/>
+                    <br></br>
+                    <p>{data?.review}</p>
+                    
+                </div>
+                
+        
             </div>
-            {/* <button className="" style={{position:"absolute",right:"20px",}} onClick={nextReview}>↪</button> */}
-            </div>
+            <a href="#slide1" className="btn btn-circle w-5 rounded-full bg-gray-500" onClick={nextReview}>❯</a>
+            
+            
         </div>
     );
 }

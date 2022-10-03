@@ -14,13 +14,14 @@ export default function PlanPrices() {
         setData(datas[e.target.value])
     }
     return (
-        <div className="planPrice_container">
-        <div style={{padding:"20px"}}>
+        <div className="planPrice_container ">
+        <div style={{padding:"20px"}} className="">
             <div className="" style={{display: "flex", justifyContent:"space-between"}}>
                 <button onClick = {plan} value="0" className="" >Basic</button>
-                <button onClick = {plan} value="1" className="">Standard</button>
+                <button onClick = {plan} value="1" className=" ">Standard</button>
                 <button onClick = {plan} value="2" className="">Premium</button>
             </div>
+            
         </div>
         <hr></hr>
         <div style={{padding:"20px"}}>
@@ -30,7 +31,7 @@ export default function PlanPrices() {
                
                 <p> {data.description}</p>
             </p>
-            <button style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}}>Continue</button>
+            <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}}>Continue</button>
         </div>
         
         </div>
