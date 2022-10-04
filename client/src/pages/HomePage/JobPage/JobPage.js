@@ -4,8 +4,11 @@ import ImageSlider from "../../../components/Navbar/ImageSlider/ImageSlider"
 import ReviewsSlider from "../../../components/Navbar/ReviewsSlider/ReviewsSlider"
 import AboutSeller from "../../../components/Navbar/AboutSeller/AboutSeller"
 import PlanPrices from "../../../components/Navbar/planPrices/PlanPrices"
+import Navbar from "../../../components/Navbar/Navbar"
 export default function JobPage() {
   return (
+    <>
+    <Navbar/>
     <div style={{display:"flex",flexWrap:"wrap"}}>
       <div className="jobPage" >
         <p className="title">I will design photoshop or psd web template, xd website design</p>
@@ -30,5 +33,6 @@ export default function JobPage() {
         <PlanPrices/>
         </div>
     </div>
+    </>
   )
 }

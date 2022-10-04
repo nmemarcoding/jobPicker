@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from '../../../components/Navbar/Navbar'
 
 export default function PostJobPage() {
     return (
-        
-      <div style={{padding:"20px"}}>
+      <>
+      <Navbar/>
+      <div style={{padding:"20px",backgroundColor:"#f3f4f6"}}>
             <div className="mt-10 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
@@ -232,5 +234,6 @@ export default function PostJobPage() {
         
 
       </div>
+      </>
     )
 }

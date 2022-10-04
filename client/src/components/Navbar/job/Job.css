@@ -52,3 +52,9 @@
     padding: 12px;
     color: gray
 }
+
+@media only screen and (max-width: 437px) {
+    .card {
+        width: 250px;
+    }
+}
