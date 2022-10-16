@@ -10,6 +10,7 @@ router.post("/", async(req, res) => {
         const savedJob = await newJob.save();
         res.status(200).json(savedJob);
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 });
@@ -55,7 +56,7 @@ router.get("/find", async(req, res) => {
         const job = await Job.find();
         res.status(200).json(job);
     } catch (err) {
-
+        console.log(err)
         res.status(500).json(err);
     }
 });

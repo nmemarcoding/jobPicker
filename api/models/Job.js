@@ -1,11 +1,39 @@
 const mongoose = require("mongoose");
 const user = require("./User");
-const ProductSchema = new mongoose.Schema({
+
+const GeoSchema = new mongoose.Schema({
+    type: {
+        type: String,
+        enum: ['Point'],
+        required: true
+    },
+    coordinates: {
+        type: [Number],
+        index: "2dsphere"
+
+    },
+
+});
+
+
+const JobSchema = new mongoose.Schema({
     title: { type: String, required: true },
     desc: { type: String, required: true, },
     img: { type: String, required: true },
     categories: { type: Array },
-    location: { type: String, required: true },
+    geometry: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            index: "2dsphere"
+
+        },
+
+    },
     availability: { type: Array },
     price: { type: Number, required: true },
     rate: { type: Number },
@@ -15,4 +43,8 @@ const ProductSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model("Job", ProductSchema);
+JobSchema.index({ geometry: "2dsphere" });
+
+module.exports = mongoose.model("Job", JobSchema);
+
+// createdAt: { type: Date, expires: 30, default: Date.now }
