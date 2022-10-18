@@ -1,27 +1,13 @@
 const mongoose = require("mongoose");
 const user = require("./User");
 
-const GeoSchema = new mongoose.Schema({
-    type: {
-        type: String,
-        enum: ['Point'],
-        required: true
-    },
-    coordinates: {
-        type: [Number],
-        index: "2dsphere"
-
-    },
-
-});
-
 
 const JobSchema = new mongoose.Schema({
     title: { type: String, required: true },
     desc: { type: String, required: true, },
     img: { type: String, required: true },
     categories: { type: Array },
-    geometry: {
+    location: {
         type: {
             type: String,
             enum: ['Point'],
@@ -31,6 +17,9 @@ const JobSchema = new mongoose.Schema({
             type: [Number],
             index: "2dsphere"
 
+        },
+        address: {
+            type: String,
         },
 
     },
@@ -43,7 +32,7 @@ const JobSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-JobSchema.index({ geometry: "2dsphere" });
+JobSchema.index({ location: "2dsphere" });
 
 module.exports = mongoose.model("Job", JobSchema);
 

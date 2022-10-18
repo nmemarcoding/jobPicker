@@ -2,6 +2,7 @@ const Job = require('../models/Job')
 
 const router = require("express").Router();
 
+
 // creat job
 router.post("/", async(req, res) => {
     const newJob = new Job(req.body);
@@ -52,8 +53,20 @@ router.get("/find/:id", async(req, res) => {
 
 //Get all jobs
 router.get("/find", async(req, res) => {
+    console.log(req.query)
     try {
-        const job = await Job.find();
+        const job = await Job.find({
+            location: {
+                $nearSphere: {
+                    $geometry: { type: "Point", coordinates: [req.query.long, req.query.lat] },
+                    $minDistance: 0,
+                    $maxDistance: 500
+                }
+            },
+            desc: { $regex: req.query.desc },
+
+
+        }).populate("owner", "username");
         res.status(200).json(job);
     } catch (err) {
         console.log(err)
