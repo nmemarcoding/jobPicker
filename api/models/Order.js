@@ -30,6 +30,7 @@ const OrderSchema = new mongoose.Schema({
     //     },
 
     // },
+
     customerAddress: { type: String, required: true },
     status: { type: String, default: 'in progress' }
 

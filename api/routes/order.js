@@ -17,7 +17,7 @@ router.post("/", async(req, res) => {
                 const savedOrder = await newOrder.save();
                 res.status(200).json(savedOrder);
             } else {
-                res.status(200).json("this time is token look for an other time");
+                res.status(200).json("this time is tooken look for an other time");
             }
 
         } else {
@@ -33,7 +33,7 @@ router.post("/", async(req, res) => {
 // Get order with customer id 
 router.get("/find/customer/:id", async(req, res) => {
     try {
-        const job = await Order.find({ "customer": req.params.id }).populate("job").populate("customer", "username email");
+        const job = await Order.find({ customer: req.params.id }).populate("job").populate("customer", "username email");
         res.status(200).json(job);
     } catch (err) {
 
@@ -41,5 +41,17 @@ router.get("/find/customer/:id", async(req, res) => {
     }
 });
 
+// get order base on job owner id 
+
+router.get("/find/owner/:id", async(req, res) => {
+    try {
+        const jobs = await Order.find({ "job.owner": req.params.id }).populate("job").populate("customer", "username email");
+        console.log(jobs);
+        res.status(200).json(jobs);
+    } catch (err) {
+
+        res.status(500).json(err.message);
+    }
+});
 
 module.exports = router;
