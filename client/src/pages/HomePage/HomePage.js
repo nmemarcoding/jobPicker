@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import Job from '../../components/Navbar/job/Job';
 import Navbar from "../../components/Navbar/Navbar"
 import "./HomePage.css"
+import { useStateValue } from '../../StateProvider';
 
 const HomePage = () => {
     const [background,setBackground] = useState("https://images.unsplash.com/photo-1625225230517-7426c1be750c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80")
     const [searchData,setSearchData]= useState("")
     const navigate = useNavigate();
+    const [{user},dispatch] = useStateValue();
+    
     const search = ()=>{
         navigate('/search', { state: { searchInfo:searchData } });
     }

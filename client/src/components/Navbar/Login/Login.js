@@ -5,16 +5,29 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import {publicRequest} from '../../../hooks/requestMethods'
 import { useNavigate } from 'react-router-dom'
-
+import { useStateValue } from '../../../StateProvider'
 
 export default function Login() {
     const [username,setUsername] = useState()
     const [password,setPassword] = useState()
+
+    const [{user},dispatch] = useStateValue();
+
     const navigate = useNavigate()
     const  handleLogin =  (e)=>{
         e.preventDefault();
         publicRequest.post('auth/login',{username,password}).then((res)=>{
-
+            dispatch({
+                type : "SET_USER",
+                user:{
+                    id: res.data._id,
+                    username: res.data.username,
+                    email: res.data.email,
+                    createdAt:res.data.createdAt,
+                    updatedAt:res.data.updatedAt,
+                    accessToken:res.data.accessToken,
+                }
+            })
             console.log(res.data)
             navigate('/');
         }).catch((e)=>{

@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../../StateProvider';
 
 const navigation = [
   { name: 'Become a jobPicker', href: '#', current: true },
@@ -14,7 +15,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
+
 export default function Navbar() {
+  const [{user},dispatch] = useStateValue();
+
   return (
     <>
 
@@ -25,11 +30,12 @@ export default function Navbar() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <Link to="/login"><li><a>Sign In</a></li></Link>
+            {user&&<li><a>Hi, {user.username}</a></li>}
+            {!user&&<Link to="/login"><li><a>Sign In</a></li></Link>}
             <Link to="/postJob"><li><a>PostJob</a></li></Link>
             <Link to=""><li><a>Your Profile</a></li></Link>
             <Link to="/profile"><li><a>Settings</a></li></Link>
-            <Link to=""><li><a>signOut</a></li></Link>
+            {user&&<Link to=""><li><a>signOut</a></li></Link>}
             
             
             
