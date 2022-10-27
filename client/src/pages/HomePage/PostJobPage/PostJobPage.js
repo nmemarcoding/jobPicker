@@ -1,7 +1,34 @@
-import React from 'react'
+
+import React, { useState } from 'react'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useStateValue } from '../../../StateProvider';
 
 export default function PostJobPage() {
+    const [{user},dispatch] = useStateValue();
+    const [credentials,setCredentials] = useState({
+      title:undefined,
+      desc:undefined,
+      img:undefined,
+      location:{type:"Point",coordinates:[-80,20.791],address:"aliso viejo"},
+      availability:[],
+      price:undefined,
+      rate:undefined,
+      owner:user.id
+
+    })
+    const handleChange = (e) => {
+      setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+      console.log(credentials)
+      
+  };
+
+  const handleDateChange = (e) => {
+    
+    setCredentials((prev) => ({ ...prev, ["availability"]: [...prev.availability,new Date()] }));
+    console.log(credentials)
+  }
+
+    console.log(credentials)
     return (
       <>
       <Navbar/>
@@ -25,10 +52,12 @@ export default function PostJobPage() {
                       </label>
                       <input
                         type="text"
-                        name="first-name"
-                        id="first-name"
+                        name="title"
+                        id="title"
+                        onChange={handleChange}
                         autoComplete="given-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required={true}
                       />
                     </div>
 
@@ -37,47 +66,65 @@ export default function PostJobPage() {
                         Job description
                       </label>
                       <br></br>
-                      <textarea className="textarea textarea-ghost" placeholder=""></textarea>
+                      <textarea className="textarea textarea-ghost" name="desc" id="desc" onChange={handleChange}></textarea>
                     </div>
 
-                    <div className="col-span-6 sm:col-span-4">
-                      <label htmlFor="email-address" className="block text-sm font-medium text-gray-700 mb-2">
-                        Availability
-                      </label>
-                      <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                        From
-                      </label>
-                      <input
-                        type="time"
-                        name="email-address"
-                        id="email-address"
-                        autoComplete="email"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      />
-                      <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                        Till
-                      </label>
-                      <input
-                        type="time"
-                        name="email-address"
-                        id="email-address"
-                        autoComplete="email"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      />
-                    </div>
-                    <div className="col-span-6 sm:col-span-4">
+                   
+                    {/* <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="email-address" className="block text-sm font-medium text-gray-700 mb-2">
                         Dates
                       </label>
-                      <div style={{display:"flex", flexDirection:"column"}}>
-                        <div><input type="checkbox"/><lable> Monday</lable></div>
-                        <div><input type="checkbox"/><lable> Tusday</lable></div>
-                        <div><input type="checkbox"/><lable> Thursday</lable></div>
-                        <div><input type="checkbox"/><lable> Wednesday</lable></div>
-                        <div><input type="checkbox"/><lable> Friday</lable></div>
-                        <div><input type="checkbox"/><lable> Saturday</lable></div>
-                        <div><input type="checkbox"/><lable> Saturday</lable></div>
+                        <div style={{display:"flex", flexDirection:"column"}}>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Monday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Tusday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Wednesday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Thursday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Friday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Saturday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                          <div style={{display:"flex", justifyContent:"space-between"}} ><div><input type="checkbox"/><lable> Sunday</lable></div><input type="time" className="ml-9"/><input type="time" className="ml-9"/></div>
+                        </div>
+                    </div> */}
+                    <div className="col-span-6 sm:col-span-4">
+
+                    <div className="col-span-6 sm:col-span-4" >
+                      <label htmlFor="email-address" className="block text-sm font-medium text-gray-700 mb-2">
+                        Dates
+                      </label>
+                        <div style={{display:"flex",}}>
+                          <div style={{display:"flex", flexDirection:"column"}}>
+                            <div><lable> Monday</lable></div>
+                            <div><lable> Tusday</lable></div>
+                            <div><lable> Wednesday</lable></div>
+                            <div><lable>Tusday </lable></div>
+                            <div><lable> Friday</lable></div>
+                            <div><lable> Saturday</lable></div>
+                            <div><lable> Sunday</lable></div>
+                          </div>
+                          <div style={{display:"flex", flexDirection:"column" }}>
+                           <input type="time" id="monday" onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="tusday" onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                          </div>
+                          <div style={{display:"flex", flexDirection:"column"}}>
+                            <input type="time" id="monday" onChange={handleDateChange} className="ml-9" style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="tusday" onChange={handleDateChange} className="ml-9" style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                          </div>
+
+                        </div>
                     </div>
+                    <div className="col-span-6 sm:col-span-4"></div>
+
+                    
+                    
                     </div>
                         
                     <div className="col-span-6 sm:col-span-4">
@@ -94,6 +141,7 @@ export default function PostJobPage() {
                             id="price"
                             className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             placeholder="0.00"
+                            onChange={handleChange}
                             />
                             <div className="absolute inset-y-0 right-0 flex items-center">
                             <label htmlFor="currency" className="sr-only">
@@ -145,73 +193,15 @@ export default function PostJobPage() {
                             </div>
                         </div>
                     </div>
-                    
-                    
-
-                    <div className="col-span-6 sm:col-span-3">
-                      <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                        Country
-                      </label>
-                      <select
-                        id="country"
-                        name="country"
-                        autoComplete="country-name"
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                      >
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>Mexico</option>
-                      </select>
-                    </div>
-
                     <div className="col-span-6">
                       <label htmlFor="street-address" className="block text-sm font-medium text-gray-700">
-                        Street address
+                        Address
                       </label>
                       <input
                         type="text"
                         name="street-address"
                         id="street-address"
                         autoComplete="street-address"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      />
-                    </div>
-
-                    <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                      <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-                        City
-                      </label>
-                      <input
-                        type="text"
-                        name="city"
-                        id="city"
-                        autoComplete="address-level2"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      />
-                    </div>
-
-                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label htmlFor="region" className="block text-sm font-medium text-gray-700">
-                        State / Province
-                      </label>
-                      <input
-                        type="text"
-                        name="region"
-                        id="region"
-                        autoComplete="address-level1"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      />
-                    </div>
-
-                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label htmlFor="postal-code" className="block text-sm font-medium text-gray-700">
-                        ZIP / Postal code
-                      </label>
-                      <input
-                        type="text"
-                        name="postal-code"
-                        id="postal-code"
-                        autoComplete="postal-code"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                     </div>

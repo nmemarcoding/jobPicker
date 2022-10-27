@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../../StateProvider';
 
+
 const navigation = [
   { name: 'Become a jobPicker', href: '#', current: true },
   { name: 'Sign in', href: 'login', current: false },
@@ -43,8 +44,8 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <link to="/"></link>
-        <a className="btn btn-ghost normal-case text-xl" href="/">Job Picker</a>
+       
+        <Link to="/"><a className="btn btn-ghost normal-case text-xl">Job Picker</a></Link>
         
       </div>
       <div className="navbar-end">
