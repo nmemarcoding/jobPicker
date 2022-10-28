@@ -23,7 +23,13 @@ const JobSchema = new mongoose.Schema({
         },
 
     },
-    availability: { type: Array },
+    monday: { type: Array },
+    tusday: { type: Array },
+    wednesday: { type: Array },
+    thursday: { type: Array },
+    friday: { type: Array },
+    saturday: { type: Array },
+    sunday: { type: Array },
     price: { type: Number, required: true },
     rate: { type: Number },
     owner: {
