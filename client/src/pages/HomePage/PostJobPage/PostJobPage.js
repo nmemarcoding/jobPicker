@@ -2,15 +2,15 @@
 import React, { useState } from 'react'
 import Navbar from '../../../components/Navbar/Navbar'
 import { useStateValue } from '../../../StateProvider';
+import {publicRequest} from '../../../hooks/requestMethods'
 
 export default function PostJobPage() {
     const [{user},dispatch] = useStateValue();
     const [credentials,setCredentials] = useState({
       title:undefined,
       desc:undefined,
-      img:undefined,
+      img:"www.google.com",
       location:{type:"Point",coordinates:[-80,20.791],address:"aliso viejo"},
-      availability:[],
       price:undefined,
       rate:undefined,
       owner:user.id,
@@ -29,6 +29,18 @@ export default function PostJobPage() {
       
   };
 
+  const  handlePost =  (e)=>{
+    e.preventDefault();
+    publicRequest.post('job',credentials).then((res)=>{
+        
+        console.log(res.data)
+       
+    }).catch((e)=>{
+            
+        window.alert(e.response.data);
+    })
+  }
+
   const handleDateChange = (e) => {
     
     (credentials[e.target.id].length >= 2) ? window.alert("you cant add any more"):
@@ -36,7 +48,7 @@ export default function PostJobPage() {
     console.log(credentials)
   }
 
-    console.log(credentials)
+    
     return (
       <>
       <Navbar/>
@@ -217,6 +229,7 @@ export default function PostJobPage() {
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button
+                    onClick={handlePost}
                     type="submit"
                     className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   >
