@@ -13,7 +13,14 @@ export default function PostJobPage() {
       availability:[],
       price:undefined,
       rate:undefined,
-      owner:user.id
+      owner:user.id,
+      monday:[],
+      tusday:[],
+      wednesday:[],
+      thursday:[],
+      friday:[],
+      saturday:[],
+      sunday:[]
 
     })
     const handleChange = (e) => {
@@ -24,7 +31,8 @@ export default function PostJobPage() {
 
   const handleDateChange = (e) => {
     
-    setCredentials((prev) => ({ ...prev, ["availability"]: [...prev.availability,new Date()] }));
+    (credentials[e.target.id].length >= 2) ? window.alert("you cant add any more"):
+    setCredentials((prev) => ({ ...prev, [e.target.id]: [...prev[e.target.id],e.target.value] }));
     console.log(credentials)
   }
 
@@ -95,7 +103,7 @@ export default function PostJobPage() {
                             <div><lable> Monday</lable></div>
                             <div><lable> Tusday</lable></div>
                             <div><lable> Wednesday</lable></div>
-                            <div><lable>Tusday </lable></div>
+                            <div><lable>Thursday </lable></div>
                             <div><lable> Friday</lable></div>
                             <div><lable> Saturday</lable></div>
                             <div><lable> Sunday</lable></div>
@@ -103,20 +111,20 @@ export default function PostJobPage() {
                           <div style={{display:"flex", flexDirection:"column" }}>
                            <input type="time" id="monday" onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
                             <input type="time" id="tusday" onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="wednesday"  onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="thursday" onChange={handleDateChange}  className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="friday"  onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="saturday"  onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="sunday"  onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
                           </div>
                           <div style={{display:"flex", flexDirection:"column"}}>
-                            <input type="time" id="monday" onChange={handleDateChange} className="ml-9" style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="monday"  onChange={handleDateChange} className="ml-9" style={{margin:"0 0 0 10px",width:"93%"}}/>
                             <input type="time" id="tusday" onChange={handleDateChange} className="ml-9" style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
-                            <input type="time" className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="wednesday"   onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="thursday" onChange={handleDateChange}  className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="friday"  onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="saturday" onChange={handleDateChange}  className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
+                            <input type="time" id="sunday"  onChange={handleDateChange} className="ml-9"style={{margin:"0 0 0 10px",width:"93%"}}/>
                           </div>
 
                         </div>
