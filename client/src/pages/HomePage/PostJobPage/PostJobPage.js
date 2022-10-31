@@ -10,7 +10,8 @@ export default function PostJobPage() {
       title:undefined,
       desc:undefined,
       img:"www.google.com",
-      location:{type:"Point",coordinates:[-80,20.791],address:"aliso viejo"},
+      location:{type:"Point",coordinates:[-80,20.791]},
+      address:undefined,
       price:undefined,
       rate:undefined,
       owner:user.id,
@@ -24,7 +25,7 @@ export default function PostJobPage() {
 
     })
     const handleChange = (e) => {
-      setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+      setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value}));
       console.log(credentials)
       
   };
@@ -62,7 +63,7 @@ export default function PostJobPage() {
             </div>
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
-            <form action="#" method="POST">
+            <form  method="POST" >
               <div className="overflow-hidden shadow sm:rounded-md">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
@@ -86,7 +87,7 @@ export default function PostJobPage() {
                         Job description
                       </label>
                       <br></br>
-                      <textarea className="textarea textarea-ghost" name="desc" id="desc" onChange={handleChange}></textarea>
+                      <textarea className="textarea textarea-ghost" name="desc" id="desc" onChange={handleChange} required></textarea>
                     </div>
 
                    
@@ -162,6 +163,7 @@ export default function PostJobPage() {
                             className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             placeholder="0.00"
                             onChange={handleChange}
+                            required
                             />
                             <div className="absolute inset-y-0 right-0 flex items-center">
                             <label htmlFor="currency" className="sr-only">
@@ -214,15 +216,17 @@ export default function PostJobPage() {
                         </div>
                     </div>
                     <div className="col-span-6">
-                      <label htmlFor="street-address" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="street-address" className="block text-sm font-medium text-gray-700" >
                         Address
                       </label>
                       <input
                         type="text"
                         name="street-address"
-                        id="street-address"
+                        id="address"
                         autoComplete="street-address"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required
+                        onClick={handleChange}
                       />
                     </div>
                   </div>
