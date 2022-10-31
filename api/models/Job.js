@@ -18,10 +18,11 @@ const JobSchema = new mongoose.Schema({
             index: "2dsphere"
 
         },
-        address: {
-            type: String,
-        },
 
+
+    },
+    address: {
+        type: String,
     },
     monday: { type: Array },
     tusday: { type: Array },
