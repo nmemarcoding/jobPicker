@@ -63,7 +63,11 @@ router.get("/find", async(req, res) => {
                     $maxDistance: 500
                 }
             },
-            desc: { $regex: req.query.desc },
+
+            title: { $regex: req.query.desc },
+
+
+
 
 
         }).populate("owner", "username");
