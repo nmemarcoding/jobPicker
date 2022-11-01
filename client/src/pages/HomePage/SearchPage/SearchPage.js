@@ -9,11 +9,10 @@ import {publicRequest} from '../../../hooks/requestMethods'
 
 export default function SearchPage() {
     const sortOptions = [
-        { name: 'Most Popular', href: '#', current: true },
-        { name: 'Best Rating', href: '#', current: false },
-        { name: 'Newest', href: '#', current: false },
-        { name: 'Price: Low to High', href: '#', current: false },
-        { name: 'Price: High to Low', href: '#', current: false },
+      
+        { name: 'Newest', href: '#', current: false,id:"new" },
+        { name: 'Price: Low to High', href: '#', current: false,id:"lh" },
+        { name: 'Price: High to Low', href: '#', current: false,id:"hl" },
       ]
     
     
@@ -39,6 +38,20 @@ export default function SearchPage() {
         })
         
         
+      }
+
+      const handleFilter = (e)=>{
+          if(e.target.name==="lh"){
+            console.log(e.target.name)
+            setJobData(jobData.sort((a,b)=>{return a.price - b.price}))
+          }else if(e.target.name==="hl"){
+            setJobData(jobData.sort((a,b)=>{return b.price - a.price}))
+          }else if (e.target.name==="new"){
+            setJobData(jobData.sort((a,b)=>{return a.createdAt - b.createdAt}))
+          }
+          
+        
+       
       }
 
       useEffect(() => {
@@ -81,17 +94,22 @@ export default function SearchPage() {
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       {sortOptions.map((option) => (
-                        <Menu.Item key={option.name}>
+                        <Menu.Item key={option.name} >
                           {({ active }) => (
                             <a
                               href={option.href}
+                              onClick={handleFilter}
+                              name={option.id}
                               className={classNames(
                                 option.current ? 'font-medium text-gray-900' : 'text-gray-500',
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm'
-                              )}
+                              )
+                            }
+                              
                             >
                               {option.name}
+                              
                             </a>
                           )}
                         </Menu.Item>
