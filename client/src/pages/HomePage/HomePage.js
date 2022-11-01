@@ -51,7 +51,7 @@ const HomePage = () => {
             </div>
             <p className="populer_jobs boxShadow">Popular professional services</p>
             <div className="flex   secondSection" >
-                <div className="job">
+                {/* <div className="job">
                     <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/196646094/original/989d6c2939c5304ec5b16a9771e35297a46502b1.jpg" />
                 </div>
                 <div className="job">
@@ -68,7 +68,7 @@ const HomePage = () => {
                 </div>
                 <div className="job">
                     <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/152611507/original/cb954436e317ae584167b9c7bed86f67bd0feaaf.png" />
-                </div>
+                </div> */}
             </div>
             <div className="flex bg-gray-200 thirdSection">
                 <div></div>

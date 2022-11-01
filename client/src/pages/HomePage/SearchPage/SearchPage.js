@@ -1,10 +1,11 @@
 import React from 'react'
-import { Fragment, useState } from 'react'
+import { Fragment, useState,useEffect } from 'react'
 import {  Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, FunnelIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import Job from '../../../components/Navbar/job/Job'
 import { useLocation } from 'react-router-dom'
 import Navbar from '../../../components/Navbar/Navbar'
+import {publicRequest} from '../../../hooks/requestMethods'
 
 export default function SearchPage() {
     const sortOptions = [
@@ -23,10 +24,27 @@ export default function SearchPage() {
       const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
       const {state} = useLocation(); 
       const [searchData,setSearchData] = useState(state?.searchInfo)
-      if(state!=null) {
-
-      }
+      
+    
+    const[jobData,setJobData] = useState([])
         
+      const fetchData = ()=>{
+        publicRequest.get(`job/find?long=-80&lat=20.792&desc=${searchData}`).then((res)=>{
+          setJobData(res.data)
+          
+          
+        }).catch((e)=>{
+                
+            window.alert(e.response.data);
+        })
+        
+        
+      }
+
+      useEffect(() => {
+          fetchData()
+          console.log(jobData)
+      },[]);
      
      
       
@@ -108,26 +126,15 @@ export default function SearchPage() {
               <div className="lg:col-span-3" >
                 {/* Replace with your content */}
                 
+                
                 <div className="h-96 rounded-lg border-4 border-dashed border-gray-200 lg:h-full" style={{height: 'auto', }} >
                 <div className="flex" style={{flexWrap:"wrap", justifyContent:"space-around" ,padding:"20px"}} >
-                <div className="job">
-                    <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/196646094/original/989d6c2939c5304ec5b16a9771e35297a46502b1.jpg" />
-                </div>
-                <div className="job">
-                    <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/234950499/original/c892880f0bc676832ef2ad8c6a1bf550be742056.jpg" />
-                </div>
-                <div className="job">
-                    <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/160465966/original/da77e76b71fad7adde52ea42c9cf15e54cf40626.jpg" />
-                </div>
-                <div className="job">
-                    <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/244455919/original/40c0b4a108b10b8f7cdcd0bf339c0ae1bf8b0aec.png" />
-                </div>
-                <div className="job">
-                    <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/253640896/original/ad708986fde034dfb1f81d61ead2d0cbba84e84b.png" />
-                </div>
-                <div className="job">
-                    <Job jobImg="https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/152611507/original/cb954436e317ae584167b9c7bed86f67bd0feaaf.png" />
-                </div>
+                {(jobData.length !==0)? jobData.map(data =>(<Job data={data}key={data._id}/> )): <div>There is no job</div>}
+
+                {/* <div className="job">
+                    <Job data={{jobImg:"https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/196646094/original/989d6c2939c5304ec5b16a9771e35297a46502b1.jpg" }}/>
+                </div> */}
+               
             </div>
 
                 </div>

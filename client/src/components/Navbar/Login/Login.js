@@ -49,11 +49,11 @@ export default function Login() {
                 </div>
                 <div className='flex flex-col mb-4'>
                     <label>Username</label>
-                    <input className='border relative bg-gray-100 p-2' type="username" onChange ={(e)=>setUsername(e.target.value)} />
+                    <input className='border relative bg-gray-100 p-2' type="username" onChange ={(e)=>setUsername(e.target.value.trim())} />
                 </div>
                 <div className='flex flex-col '>
                     <label>Password</label>
-                    <input className='border relative bg-gray-100 p-2' type="password" onChange ={(e)=>setPassword(e.target.value)}/>
+                    <input className='border relative bg-gray-100 p-2' type="password" onChange ={(e)=>setPassword(e.target.value.trim())}/>
                 </div>
                 <button className='w-full py-3 mt-8 bg-indigo-600 hover:bg-indigo-500 relative text-white' onClick={handleLogin}>Sign In</button>
                 <Link to ="/signup"><button className='w-full py-3 mt-8 bg-gray-300 hover:bg-indigo-500 relative text-white'>Sign Up</button></Link>
