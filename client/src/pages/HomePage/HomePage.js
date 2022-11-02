@@ -12,7 +12,7 @@ const HomePage = () => {
     const [{user},dispatch] = useStateValue();
     
     const search = ()=>{
-        navigate('/search', { state: { searchInfo:searchData } });
+        navigate(`/search/${searchData}`, { state: { searchInfo:searchData } });
     }
 
     return (

@@ -19,7 +19,8 @@ function App() {
       <Route path="/signup" element={<SignupPage/>}/>
       {<Route path="/job/:id" element={<JobPage/>}/>}
       <Route path="/profile" element={<ProfilePage/>}/>
-      <Route path="/search" element={<SearchPage/>}/>
+      <Route path="/search/:search" element={<SearchPage/>}/>
+      <Route path="/search/*" element={<SearchPage/>}/>
       
       {/* <Route path="/register" element={user ? <Navigate replace to="/" />:<Register/>}/>  */}
       {user?<Route  path="/postjob" element={<PostJobPage/>}/>:<Route path="/postjob" element={<LoginPage/>}/>}   

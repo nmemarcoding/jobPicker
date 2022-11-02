@@ -28,7 +28,7 @@ export default function SearchPage() {
     const[jobData,setJobData] = useState([])
         
       const fetchData = ()=>{
-        publicRequest.get(`job/find?long=-80&lat=20.792&desc=${searchData}`).then((res)=>{
+        publicRequest.get(`job/find?long=-80&lat=20.792&desc=${window.location.pathname.split('/')[2]}`).then((res)=>{
           setJobData(res.data)
           
           
@@ -53,6 +53,8 @@ export default function SearchPage() {
         
        
       }
+
+      console.log(window.location.pathname.split('/')[2])
 
       useEffect(() => {
           fetchData()
