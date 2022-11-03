@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Job.css"
+import { useNavigate } from 'react-router-dom';
 
 const Job = ({data}) => {
-   
+    const navigate = useNavigate();
+    const jobDetails = ()=>{
+        navigate(`/job/${data._id}`);
+    }
     return (
         <div>
             <div className="card">
-                    <Link to="/job/:id">
-                    <img  src="" alt="" className="card-img" />
-                    </Link>
+                    
+                    <img  src={data.img} alt="" className="card-img" onClick={jobDetails}  />
+                    
                     <div className="workerContainer">
                         
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" className="user-img" />
+                        <img src={"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"} alt="" className="user-img" />
                      
                         <div className="name-container">
                             <div className="">{data.owner.username}</div>

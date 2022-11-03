@@ -149,11 +149,11 @@ export default function SearchPage() {
                 
                 <div className="h-96 rounded-lg border-4 border-dashed border-gray-200 lg:h-full" style={{height: 'auto', }} >
                 <div className="flex" style={{flexWrap:"wrap", justifyContent:"space-around" ,padding:"20px"}} >
-                {(jobData.length !==0)? jobData.map(data =>(<Job data={data}key={data._id}/> )): <div>There is no job</div>}
+                
 
-                {/* <div className="job">
-                    <Job data={{jobImg:"https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/196646094/original/989d6c2939c5304ec5b16a9771e35297a46502b1.jpg" }}/>
-                </div> */}
+                
+                {(jobData.length !==0)? jobData.map(data =>(<div style={{margin:"20px"}}><Job data={data}key={data._id}/></div> )): <div>There is no job</div>}
+                
                
             </div>
 

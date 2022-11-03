@@ -3,13 +3,15 @@ import React, { useState } from 'react'
 import Navbar from '../../../components/Navbar/Navbar'
 import { useStateValue } from '../../../StateProvider';
 import {publicRequest} from '../../../hooks/requestMethods'
+import axios from 'axios';
 
 export default function PostJobPage() {
     const [{user},dispatch] = useStateValue();
+    const [button,setButoon]=useState(false);
     const [credentials,setCredentials] = useState({
       title:undefined,
       desc:undefined,
-      img:"www.google.com",
+      img:"https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/152611507/original/cb954436e317ae584167b9c7bed86f67bd0feaaf.png",
       location:{type:"Point",coordinates:[-80,20.791]},
       address:undefined,
       price:undefined,
@@ -48,6 +50,35 @@ export default function PostJobPage() {
     setCredentials((prev) => ({ ...prev, [e.target.id]: [...prev[e.target.id],e.target.value] }));
     console.log(credentials)
   }
+
+  const uploadImage = (event) => {
+    setButoon(true);
+    const cloud_name = 'dojtzxjie';
+    const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${cloud_name}/upload`;
+    const CLOUDINARY_UPLOAD_PRESET = 'ml_default';
+
+    const file = event.target.files[0];
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+    console.log('start');
+    axios(CLOUDINARY_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: formData
+    }).then(response => {
+      setCredentials((prev) => ({ ...prev, img: response.data.secure_url}));
+    }).then(setButoon(false) )
+    .catch((e)=>{
+      console.log(e)
+    })
+
+  }
+
+
 
     
     return (
@@ -206,7 +237,7 @@ export default function PostJobPage() {
                                     className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
                                 >
                                     <span>Upload a file</span>
-                                    <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                                    <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={uploadImage} />
                                 </label>
                                 <p className="pl-1">or drag and drop</p>
                                 </div>
@@ -233,6 +264,7 @@ export default function PostJobPage() {
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button
+                  disabled={button}
                     onClick={handlePost}
                     type="submit"
                     className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
