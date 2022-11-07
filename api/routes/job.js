@@ -43,7 +43,7 @@ router.delete("/:id", async(req, res) => {
 //GET Job
 router.get("/find/:id", async(req, res) => {
     try {
-        const job = await Job.findById(req.params.id);
+        const job = await Job.findById(req.params.id).populate("owner", "-password");;
         res.status(200).json(job);
     } catch (err) {
 
