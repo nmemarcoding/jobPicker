@@ -6,6 +6,7 @@ import AboutSeller from "../../../components/Navbar/AboutSeller/AboutSeller"
 import PlanPrices from "../../../components/Navbar/planPrices/PlanPrices"
 import Navbar from "../../../components/Navbar/Navbar"
 import {publicRequest} from '../../../hooks/requestMethods'
+import moment from 'moment'
 
 export default function JobPage() {
   const[jobData,setJobData] = useState([])
@@ -32,6 +33,8 @@ export default function JobPage() {
   return (
     <>
     <Navbar/>
+    
+
     <div style={{display:"flex",flexWrap:"wrap"}}>
       <div className="jobPage" >
         <p className="title">{jobData?.title?.toUpperCase()}</p>
@@ -53,7 +56,14 @@ export default function JobPage() {
         
       </div>
       <div className="planPrices_container" >
-        <PlanPrices/>
+        <PlanPrices price={jobData?.price} 
+          dates={
+            {monday:jobData?.monday,tusday:jobData?.tusday,wednesday:jobData?.wednesday,
+              thursday:jobData?.thursday,friday:jobData?.friday,saturday:jobData?.saturday,
+              sunday:jobData?.sunday
+            }
+          }
+        />
         </div>
     </div>
     </>

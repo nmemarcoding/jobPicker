@@ -16,7 +16,7 @@ export default function ImageSlider(props) {
                     <div className="jss1473 is-draggable">
                         <div className="jss1475">
                         <div className="jss1474 is-selected" style={{left: "0%"}}><span className="jss1480 jss1481 jss1477 jss1479 jss1470">
-                            <img className="jss1478 jss1470" src={image} alt="iPad Pro 11 Inch " loading="lazy"/></span></div>
+                            <img className="jss1478 jss1470" src={props?.img} alt="" loading="lazy"/></span></div>
                         </div>
                     </div>
                     </div>

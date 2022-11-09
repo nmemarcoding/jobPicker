@@ -1,5 +1,6 @@
 import React from 'react'
 import "./AboutSeller.css"
+import moment from 'moment'
 
 export default function AboutSeller({data}) {
   return (
@@ -19,7 +20,7 @@ export default function AboutSeller({data}) {
                     </div>
                     <div className="" style={{paddingLeft:"50%"}}>
                         <div className="" style={{color:"gray"}}>Member since</div>
-                        <div className="">Apr 2019</div>
+                        <div className="">{moment(data?.owner?.createdAt).format("MMM YY")}</div>
                     </div>
                 </div>
                 <div className="" style={{display:"flex",marginTop:"20px"}}>
