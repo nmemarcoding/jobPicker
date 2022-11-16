@@ -9,10 +9,10 @@ router.post("/", async(req, res) => {
     try {
         const job = await Job.find({
             _id: req.body.job,
-            availability: { "$in": [req.body.time] }
+            [req.body.day]: { "$in": [req.body.time] }
         })
         if (job.length) {
-            const avaliableTime = await Order.find({ job: req.body.job, time: req.body.time })
+            const avaliableTime = await Order.find({ job: req.body.job, time: req.body.time, day: req.body.day })
             if (!avaliableTime.length) {
                 const savedOrder = await newOrder.save();
                 res.status(200).json(savedOrder);
@@ -23,6 +23,7 @@ router.post("/", async(req, res) => {
         } else {
             res.status(200).json("change your time there is no avalable job at this time");
         }
+        // res.status(200).json(job);
 
     } catch (err) {
         console.log(err)
