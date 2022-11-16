@@ -11,6 +11,7 @@ import moment from 'moment'
 export default function JobPage() {
   const[jobData,setJobData] = useState([])
 
+
   const fetchData = ()=>{
     publicRequest.get(`job/find/${window.location.pathname.split('/')[2]}`).then((res)=>{
       setJobData(res.data)
@@ -61,8 +62,9 @@ export default function JobPage() {
             {monday:jobData?.monday,tusday:jobData?.tusday,wednesday:jobData?.wednesday,
               thursday:jobData?.thursday,friday:jobData?.friday,saturday:jobData?.saturday,
               sunday:jobData?.sunday
-            }
+            }            
           }
+          jobId={window.location.pathname.split('/')[2]}
         />
         </div>
     </div>

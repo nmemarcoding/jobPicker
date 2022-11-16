@@ -8,7 +8,7 @@ export default function PlanPrices(props) {
                 {price:"650",description:" 5 Page PSD or Xd or Figma template design+ 3-5 section (coding not included)"}  ]
     
     const [data,setData] = useState(datas[0])
-   
+    
     const [time,setTime] = useState([])
     const plan = (e)=>{
         
