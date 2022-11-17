@@ -17,11 +17,11 @@ router.post("/", async(req, res) => {
                 const savedOrder = await newOrder.save();
                 res.status(200).json(savedOrder);
             } else {
-                res.status(200).json("this time is tooken look for an other time");
+                res.status(200).json(`${req.body.day} ${req.body.time} is tooken look for an other time`);
             }
 
         } else {
-            res.status(200).json("change your time there is no avalable job at this time");
+            res.status(200).json(`change your time there is no avalable job at ${req.body.day} ${req.body.time}`);
         }
         // res.status(200).json(job);
 
