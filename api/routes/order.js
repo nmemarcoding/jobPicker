@@ -38,7 +38,7 @@ router.get("/find/customer/:id", async(req, res) => {
         res.status(200).json(job);
     } catch (err) {
 
-        res.status(500).json(err);
+        res.status(500).json(err.message);
     }
 });
 
@@ -46,8 +46,8 @@ router.get("/find/customer/:id", async(req, res) => {
 
 router.get("/find/owner/:id", async(req, res) => {
     try {
-        const jobs = await Order.find({ "job.owner": req.params.id }).populate("job").populate("customer", "username email");
-        console.log(jobs);
+        const jobs = await Order.find({ owner: req.params.id }).populate("job").populate("customer", "username email");
+
         res.status(200).json(jobs);
     } catch (err) {
 

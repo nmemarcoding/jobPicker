@@ -33,7 +33,8 @@ const OrderSchema = new mongoose.Schema({
     // },
 
     customerAddress: { type: String, required: true },
-    status: { type: String, default: 'in progress' }
+    status: { type: String, default: 'in progress' },
+    owner: { type: String, required: true, }
 
 }, { timestamps: true });
 
