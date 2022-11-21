@@ -10,7 +10,7 @@ import moment from 'moment'
 
 export default function JobPage() {
   const[jobData,setJobData] = useState([])
-
+  
 
   const fetchData = ()=>{
     publicRequest.get(`job/find/${window.location.pathname.split('/')[2]}`).then((res)=>{
@@ -65,6 +65,7 @@ export default function JobPage() {
             }            
           }
           jobId={window.location.pathname.split('/')[2]}
+          owner={jobData?.owner?._id}
         />
         </div>
     </div>

@@ -14,11 +14,12 @@ export default function PlanPrices(props) {
     const [data,setData] = useState(datas[0])
     const [{user},dispatch] = useStateValue();
     const [credentials,setCredentials] = useState({
-        costomer:user?.id,
+        customer:user?.id,
         job:props.jobId,
         time:undefined,
         customerAddress:"aliso viejo",
         day:undefined,
+        owner:props.owner
     })
      
     
