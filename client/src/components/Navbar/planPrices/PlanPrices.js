@@ -19,7 +19,7 @@ export default function PlanPrices(props) {
         time:undefined,
         customerAddress:"aliso viejo",
         day:undefined,
-        owner:props.owner
+        owner:undefined
     })
      
     
@@ -31,6 +31,7 @@ export default function PlanPrices(props) {
         setTime(props?.dates[e.target.value.toLowerCase()])
         
         setDay(e.target.value)
+
         console.log(credentials)
     }
     
@@ -40,7 +41,7 @@ export default function PlanPrices(props) {
     ,[time])
 
     const selectTime = (e) => {
-        setCredentials((prev) => ({ ...prev,[e.target.id]: e.target.value,day:day}));
+        setCredentials((prev) => ({ ...prev,[e.target.id]: e.target.value,day:day,owner:props?.owner}));
         
     }
     useEffect(() => {

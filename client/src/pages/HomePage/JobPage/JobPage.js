@@ -11,7 +11,7 @@ import moment from 'moment'
 export default function JobPage() {
   const[jobData,setJobData] = useState([])
   
-
+  
   const fetchData = ()=>{
     publicRequest.get(`job/find/${window.location.pathname.split('/')[2]}`).then((res)=>{
       setJobData(res.data)

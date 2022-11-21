@@ -29,7 +29,7 @@ export default function Login() {
                 }
             })
             console.log(res.data)
-            navigate('/');
+            navigate(-1);
         }).catch((e)=>{
                 
             window.alert(e.response.data);
