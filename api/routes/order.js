@@ -4,16 +4,18 @@ const router = require("express").Router();
 
 // creat order
 router.post("/", async(req, res) => {
-    const newOrder = new Order(req.body);
+
 
     try {
         const job = await Job.find({
             _id: req.body.job,
             [req.body.day]: { "$in": [req.body.time] }
         })
+
         if (job.length) {
             const avaliableTime = await Order.find({ job: req.body.job, time: req.body.time, day: req.body.day })
             if (!avaliableTime.length) {
+                const newOrder = new Order({...req.body, owner: job[0].owner.toString() });
                 const savedOrder = await newOrder.save();
                 res.status(200).json(savedOrder);
             } else {
