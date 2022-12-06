@@ -19,7 +19,7 @@ export default function PlanPrices(props) {
         time:undefined,
         customerAddress:"aliso viejo",
         day:undefined,
-        owner:undefined
+        
     })
      
     
@@ -41,7 +41,7 @@ export default function PlanPrices(props) {
     ,[time])
 
     const selectTime = (e) => {
-        setCredentials((prev) => ({ ...prev,[e.target.id]: e.target.value,day:day,owner:props?.owner}));
+        setCredentials((prev) => ({ ...prev,[e.target.id]: e.target.value,day:day}));
         
     }
     useEffect(() => {
@@ -92,7 +92,7 @@ export default function PlanPrices(props) {
         
             <select id="time"onChange={selectTime} >
                 <option >Select Time</option>
-                {time.map((data,index)=><option key={index} >{data}</option>)}
+                {time?.map((data,index)=><option key={index} >{data}</option>)}
                 
                 {/* <option  value={moment().format('dddd')}>{moment().format('dddd MMM Do ' )}</option>
                 <option  value={moment().add(1, 'days').format('dddd')}>{moment().add(1, 'days').format('dddd MMM Do ' )}</option>

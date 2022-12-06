@@ -7,6 +7,7 @@ import PostJobPage from "./pages/HomePage/PostJobPage/PostJobPage";
 import ProfilePage from "./pages/HomePage/ProfilePage/ProfilePage";
 import SearchPage from "./pages/HomePage/SearchPage/SearchPage";
 import { useStateValue } from '../src/StateProvider';
+import OwnerJobs from "./pages/HomePage/OwnerJobs/OwnerJobs";
 
 function App() {
    const [{user},dispatch] = useStateValue();
@@ -23,7 +24,8 @@ function App() {
       <Route path="/search/*" element={<SearchPage/>}/>
       
       {/* <Route path="/register" element={user ? <Navigate replace to="/" />:<Register/>}/>  */}
-      {user?<Route  path="/postjob" element={<PostJobPage/>}/>:<Route path="/postjob" element={<LoginPage/>}/>}   
+      {user?<Route  path="/postjob" element={<PostJobPage/>}/>:<Route path="/postjob" element={<LoginPage/>}/>} 
+      {user?<Route  path="/yourjobs" element={<OwnerJobs/>}/>:<Route path="/postjob" element={<LoginPage/>}/>}  
       <Route exact path="/" element={<HomePage/>}/>    
       
     </Routes>

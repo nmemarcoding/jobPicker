@@ -34,6 +34,8 @@ export default function Navbar() {
             {user&&<li><a>Hi, {user.username}</a></li>}
             {!user&&<Link to="/login"><li><a>Sign In</a></li></Link>}
             <Link to="/postJob"><li><a>PostJob</a></li></Link>
+            {user&&<Link to=""><li><a>Your Orders</a></li></Link>}
+            {user&&<Link to="/yourjobs"><li><a>Your Jobs</a></li></Link>}
             <Link to=""><li><a>Your Profile</a></li></Link>
             <Link to="/profile"><li><a>Settings</a></li></Link>
             {user&&<Link to=""><li><a>signOut</a></li></Link>}

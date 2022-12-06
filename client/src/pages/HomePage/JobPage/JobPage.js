@@ -65,7 +65,7 @@ export default function JobPage() {
             }            
           }
           jobId={window.location.pathname.split('/')[2]}
-          owner={jobData?.owner?._id}
+          
         />
         </div>
     </div>
