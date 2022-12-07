@@ -4,13 +4,13 @@ import {publicRequest} from '../../../hooks/requestMethods'
 import Navbar from '../../../components/Navbar/Navbar'
 import { useStateValue } from '../../../StateProvider';
 
-export default function OwnerOrders() {
+export default function YourOrders() {
     const[jobs,setjobs] = useState([])
   
     const [{user},dispatch] = useStateValue();
     
     const fetchData = ()=>{
-        publicRequest.get(`order/find/owner/${user?.id}`).then((res)=>{
+        publicRequest.get(`order/find/customer/${user?.id}`).then((res)=>{
         setjobs(res.data)
         
         

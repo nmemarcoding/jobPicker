@@ -8,6 +8,7 @@ import ProfilePage from "./pages/HomePage/ProfilePage/ProfilePage";
 import SearchPage from "./pages/HomePage/SearchPage/SearchPage";
 import { useStateValue } from '../src/StateProvider';
 import OwnerJobs from "./pages/HomePage/OwnerJobs/OwnerJobs";
+import YourOrders from "./pages/HomePage/YourOrders/YourOrders";
 
 function App() {
    const [{user},dispatch] = useStateValue();
@@ -25,7 +26,9 @@ function App() {
       
       {/* <Route path="/register" element={user ? <Navigate replace to="/" />:<Register/>}/>  */}
       {user?<Route  path="/postjob" element={<PostJobPage/>}/>:<Route path="/postjob" element={<LoginPage/>}/>} 
-      {user?<Route  path="/yourjobs" element={<OwnerJobs/>}/>:<Route path="/postjob" element={<LoginPage/>}/>}  
+      {user?<Route  path="/yourjobs" element={<OwnerJobs/>}/>:<Route path="/yourjobs" element={<LoginPage/>}/>} 
+      {user?<Route  path="/yourorders" element={<YourOrders/>}/>:<Route path="/yourorders" element={<LoginPage/>}/>}
+
       <Route exact path="/" element={<HomePage/>}/>    
       
     </Routes>
