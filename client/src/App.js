@@ -9,9 +9,13 @@ import SearchPage from "./pages/HomePage/SearchPage/SearchPage";
 import { useStateValue } from '../src/StateProvider';
 import OwnerJobs from "./pages/HomePage/OwnerJobs/OwnerJobs";
 import YourOrders from "./pages/HomePage/YourOrders/YourOrders";
+import useGeoLocation from "./hooks/useGeoLocation";
 
 function App() {
    const [{user},dispatch] = useStateValue();
+
+   const location = useGeoLocation()
+   
   return <Router>
   <div className="app ">
     <Routes>
