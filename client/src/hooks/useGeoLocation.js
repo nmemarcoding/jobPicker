@@ -48,10 +48,16 @@ export default function useGeoLocation() {
        
     },[location])
 
-    useEffect(() => {
-        console.log(address)
-    },[address])
-    return 
+    // useEffect(() => {
+    //     address && console.log(address)
+    // },[address])
+    if(address){
+        return {address: address,
+        lat: location.coordinates.lat,
+        long: location.coordinates.lng
+    }
+    }
+    
        
     
 }

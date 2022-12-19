@@ -15,6 +15,7 @@ function App() {
    const [{user},dispatch] = useStateValue();
 
    const location = useGeoLocation()
+   location && console.log(location);
    
   return <Router>
   <div className="app ">
