@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../../StateProvider';
+import "./Navbar.css"
 
 
 const navigation = [
@@ -47,7 +48,7 @@ export default function Navbar() {
       </div>
       <div className="navbar-center">
        
-        <Link to="/"><a className="btn btn-ghost normal-case text-xl">Job Picker</a></Link>
+        <Link to="/"><a className="navbar-center btn btn-ghost normal-case text-xl">Job Picker</a></Link>
         
       </div>
       <div className="navbar-end">
@@ -67,3 +68,8 @@ export default function Navbar() {
     </>
   )
 }
+
+
+
+
+

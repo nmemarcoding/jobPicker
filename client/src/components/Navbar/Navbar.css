@@ -1,0 +1,10 @@
+.navbar-center a:hover {
+    animation: rotate360 1s ease-in-out both;
+    animation-iteration-count: 1;
+}
+
+@keyframes rotate360 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
