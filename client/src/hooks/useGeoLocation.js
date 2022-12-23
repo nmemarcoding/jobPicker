@@ -1,12 +1,12 @@
 import React,{ useState, useEffect} from 'react'
 
 export default function useGeoLocation() {
-
     const [location,setLocation] = useState({
         loaded: false,
         coordinates:{lat:"",lng:""}
     });
     const [address,setAddress] = useState("")
+    const [error, setError] = useState(null)
 
     const onSuccess= location=>{
         
@@ -39,25 +39,25 @@ export default function useGeoLocation() {
         }
     },[])
     useEffect(() => {
-        
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location?.coordinates?.lat},${location?.coordinates?.lng}&key=AIzaSyDImOGv0owLXzAe6i49fIsFM_dUyuHEfDo`)
-        .then((response) => response.json())
-        .then((data) => setAddress(data?.results[0]?.formatted_address)
-            );
-            
-       
+        if (location.coordinates.lat && location.coordinates.lng) {
+            try {
+                fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coordinates.lat},${location.coordinates.lng}&key=AIzaSyDImOGv0owLXzAe6i49fIsFM_dUyuHEfDo`)
+                .then((response) => response.json())
+                .then((data) => setAddress(data?.results[0]?.formatted_address)
+                    );
+            } catch (error) {
+                setError(error)
+            }
+        }
     },[location])
 
-    // useEffect(() => {
-    //     address && console.log(address)
-    // },[address])
+    if(error){
+        return {error}
+    }
     if(address){
         return {address: address,
         lat: location.coordinates.lat,
         long: location.coordinates.lng
     }
     }
-    
-       
-    
 }
