@@ -4,26 +4,22 @@ export const initialState = {
 };
 
 const reducer = (state, action) => {
-    console.log(action.user);
     switch (action.type) {
-
-
-
-        case "SET_USER":
+        case 'SET_USER':
+            localStorage.setItem('user', JSON.stringify(action.user));
             return {
                 ...state,
-                user: action.user
-            }
-        case "EMPTY_USER":
+                user: action.user,
+            };
+        case 'EMPTY_USER':
+            localStorage.removeItem('user');
             return {
                 ...state,
-                user: null
-            }
-
+                user: null,
+            };
         default:
             return state;
     }
-
-}
+};
 
 export default reducer;

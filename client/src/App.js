@@ -10,12 +10,17 @@ import { useStateValue } from '../src/StateProvider';
 import OwnerJobs from "./pages/HomePage/OwnerJobs/OwnerJobs";
 import YourOrders from "./pages/HomePage/YourOrders/YourOrders";
 import useGeoLocation from "./hooks/useGeoLocation";
+import {userInfo} from "./hooks/getUserInfo"
+import { useEffect } from "react";
+
 
 function App() {
    const [{user},dispatch] = useStateValue();
-
+    // console.log(user);
+  
+    
    const location = useGeoLocation()
-   location && console.log(location);
+  //  location && console.log(location);
    
   return <Router>
   <div className="app ">

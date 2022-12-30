@@ -5,6 +5,8 @@ import { useStateValue } from '../../../StateProvider';
 import { useNavigate } from "react-router-dom";
 import {publicRequest} from '../../../hooks/requestMethods'
 
+
+
 export default function PlanPrices(props) {
     const datas = [{price:"100",description:" 1 Page PSD or Xd or Figma template design+ 3-5 section (coding not included)"},
                 {price:"450",description:" 3 Page PSD or Xd or Figma template design+ 3-5 section (coding not included)"},
@@ -24,19 +26,22 @@ export default function PlanPrices(props) {
      
     
     const [time,setTime] = useState([])
+
     const [day,setDay]=useState()
     
     const handleChange=(e)=>{
         // console.log(e.target.value.toLowerCase())
         setTime(props?.dates[e.target.value.toLowerCase()])
         
-        setDay(e.target.value)
+        setDay(e.target.value.toLowerCase())
 
         console.log(credentials)
     }
     
     useEffect(() => {
         console.log(time)
+       
+
     }
     ,[time])
 
@@ -53,14 +58,15 @@ export default function PlanPrices(props) {
             navigate("/login")
         }else{
             e.preventDefault();
+            console.log(credentials)
             publicRequest.post('order',credentials).then((res)=>{
                 
                
                 typeof res.data !== 'object' && window.alert(res.data)
             
             }).catch((e)=>{
-                    
-                window.alert(e.response.data);
+                 
+                window.alert(e.response.data.message);
             })
         }
     }
@@ -93,14 +99,6 @@ export default function PlanPrices(props) {
             <select id="time"onChange={selectTime} >
                 <option >Select Time</option>
                 {time?.map((data,index)=><option key={index} >{data}</option>)}
-                
-                {/* <option  value={moment().format('dddd')}>{moment().format('dddd MMM Do ' )}</option>
-                <option  value={moment().add(1, 'days').format('dddd')}>{moment().add(1, 'days').format('dddd MMM Do ' )}</option>
-                <option onClick={handleChange} value={moment().add(2, 'days').format('dddd')}>{moment().add(2, 'days').format('dddd MMM Do ' )}</option>
-                <option  value={moment().add(3, 'days').format('dddd')}>{moment().add(3, 'days').format('dddd MMM Do ' )}</option>
-                <option  value={moment().add(4, 'days').format('dddd')}>{moment().add(4, 'days').format('dddd MMM Do ' )}</option>
-                <option value={moment().add(5, 'days').format('dddd')}>{moment().add(5, 'days').format('dddd MMM Do ' )}</option>
-                <option  value={moment().add(6, 'days').format('dddd')}>{moment().add(6, 'days').format('dddd MMM Do ' )}</option> */}
             </select>
             <hr></hr>
             <br></br>
