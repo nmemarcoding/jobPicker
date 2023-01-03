@@ -12,7 +12,7 @@ export default function PostJobPage() {
     const [credentials,setCredentials] = useState({
       title:undefined,
       desc:undefined,
-      img:"https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/152611507/original/cb954436e317ae584167b9c7bed86f67bd0feaaf.png",
+      img:"https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
       location:{type:"Point",coordinates:[-80,20.791]},
       address:undefined,
       price:undefined,
@@ -250,6 +250,10 @@ export default function PostJobPage() {
                                 <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                             </div>
                             </div>
+                        </div>
+                        <br></br>
+                        <div className="h-64 w-full overflow-hidden rounded-md border-2 border-dashed border-gray-300">
+                          <img id="image-preview" src={credentials.img} alt="Image preview" className="object-cover h-full w-full" />
                         </div>
                     </div>
                     <div className="col-span-6">
