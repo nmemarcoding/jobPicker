@@ -39,7 +39,7 @@ export default function Navbar() {
             {user&&<Link to="/yourjobs"><li><a>Your Jobs</a></li></Link>}
             <Link to=""><li><a>Your Profile</a></li></Link>
             <Link to="/profile"><li><a>Settings</a></li></Link>
-            {user&&<Link to=""><li><a>signOut</a></li></Link>}
+            {user&&<Link to=""><li><a onClick={() => dispatch({ type: 'EMPTY_USER' })}>signOut</a></li></Link>}
             
             
             
