@@ -4,6 +4,7 @@ import Navbar from '../../../components/Navbar/Navbar'
 import { useStateValue } from '../../../StateProvider';
 import {publicRequest} from '../../../hooks/requestMethods'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function PostJobPage() {
     const [{user},dispatch] = useStateValue();
@@ -30,13 +31,18 @@ export default function PostJobPage() {
       setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value}));
       console.log(credentials)
       
-  };
+    };
+    const navigate = useNavigate();
+    const jobDetails = ()=>{
+        
+    }
 
   const  handlePost =  (e)=>{
     e.preventDefault();
     publicRequest.post('job',credentials).then((res)=>{
         
         console.log(res.data)
+        navigate(`/job/${res?.data?._id}`);
        
     }).catch((e)=>{
             
