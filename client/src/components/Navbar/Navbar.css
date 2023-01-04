@@ -3,6 +3,10 @@
     animation-iteration-count: 1;
 }
 
+input[type="text"] {
+    border: .5px solid black;
+}
+
 @keyframes rotate360 {
     100% {
         transform: rotate(360deg);

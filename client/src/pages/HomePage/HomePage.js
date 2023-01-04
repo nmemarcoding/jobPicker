@@ -6,7 +6,7 @@ import "./HomePage.css"
 import { useStateValue } from '../../StateProvider';
 
 const HomePage = () => {
-    const [background,setBackground] = useState("https://images.unsplash.com/photo-1625225230517-7426c1be750c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80")
+    const [background,setBackground] = useState("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
     const [searchData,setSearchData]= useState("")
     const navigate = useNavigate();
     const [{user},dispatch] = useStateValue();
@@ -26,7 +26,7 @@ const HomePage = () => {
                     {/* <h className="search-title">
                     Find the perfect services for your needs
                     </h> */}
-                    <h3 className="text-lg font-medium leading-6 text-gray-900">Find the perfect services for your needs</h3>
+                    <h3 className="text-lg font-medium leading-6 text-gray-900">Let us assist you in finding the services that match your expectations</h3>
                     <br></br>
                     <div className="form-control">
                     <form className="input-group" >
