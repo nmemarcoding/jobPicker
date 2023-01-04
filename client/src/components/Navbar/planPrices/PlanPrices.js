@@ -102,10 +102,7 @@ export default function PlanPrices(props) {
             </select>
             <hr></hr>
             <br></br>
-            <p style={{display:"flex"}}>
-               
-                <p> {data.description}</p>
-            </p>
+            
             <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}} onClick={submitOrder}>Continue</button>
         </div>
         
