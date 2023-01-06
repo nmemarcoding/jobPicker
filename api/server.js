@@ -6,7 +6,8 @@ const cors = require("cors");
 const authRoute = require("./routes/auth");
 const jobRoute = require("./routes/job");
 const orderRoute = require("./routes/order");
-const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const auth = require('./middlewear/auth');
 
 
 dotenv.config();
@@ -20,9 +21,10 @@ mongoose
 
 
 app.use(cors());
-app.use(bodyParser.json());
-
 app.use(express.json());
+app.use(cookieParser());
+
+
 app.use("/api/auth", authRoute);
 app.use("/api/job", jobRoute);
 app.use("/api/order", orderRoute)

@@ -1,5 +1,5 @@
 const Job = require('../models/Job')
-
+const auth = require('../middlewear/auth');
 const router = require("express").Router();
 const mongoose = require('mongoose');
 
@@ -81,16 +81,33 @@ router.get("/find", async(req, res) => {
 
 // GET all jobs by owner ID
 
-router.get('/findbyownerid', async(req, res) => {
+// router.get('/findbyownerid', auth, async(req, res) => {
 
+//     try {
+
+//         // Find all jobs with the specified owner ID
+//         const jobs = await Job.find({ owner: mongoose.Types.ObjectId(req.body.owner_id) });
+//         res.json(jobs);
+//     } catch (err) {
+
+//         res.status(500).send(err);
+//     }
+// });
+
+router.get('/findbyownerid', auth, async(req, res) => {
     try {
+        // Check that the owner ID in the request body matches the user ID in the access token
 
+        console.log(req.userId)
+        if (req.userId !== req.body.owner_id) {
+            return res.status(401).send({ error: 'Unauthorized nit as right user' });
+        }
         // Find all jobs with the specified owner ID
         const jobs = await Job.find({ owner: mongoose.Types.ObjectId(req.body.owner_id) });
         res.json(jobs);
     } catch (err) {
-
         res.status(500).send(err);
     }
 });
+
 module.exports = router;

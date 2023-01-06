@@ -2,7 +2,7 @@ const Job = require('../models/Job');
 const Order = require('../models/Order');
 const router = require("express").Router();
 const moment = require('moment');
-
+const auth = require('../middlewear/auth');
 
 // creat order
 // router.post("/", async(req, res) => {
