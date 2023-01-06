@@ -6,6 +6,8 @@ const cors = require("cors");
 const authRoute = require("./routes/auth");
 const jobRoute = require("./routes/job");
 const orderRoute = require("./routes/order");
+const bodyParser = require('body-parser');
+
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ mongoose
 
 
 app.use(cors());
+app.use(bodyParser.json());
+
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/job", jobRoute);

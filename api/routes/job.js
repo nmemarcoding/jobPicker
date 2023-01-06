@@ -1,6 +1,7 @@
 const Job = require('../models/Job')
 
 const router = require("express").Router();
+const mongoose = require('mongoose');
 
 
 // creat job
@@ -75,6 +76,21 @@ router.get("/find", async(req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json(err);
+    }
+});
+
+// GET all jobs by owner ID
+
+router.get('/findbyownerid', async(req, res) => {
+
+    try {
+
+        // Find all jobs with the specified owner ID
+        const jobs = await Job.find({ owner: mongoose.Types.ObjectId(req.body.owner_id) });
+        res.json(jobs);
+    } catch (err) {
+
+        res.status(500).send(err);
     }
 });
 module.exports = router;
