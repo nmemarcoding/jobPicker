@@ -28,13 +28,26 @@ export default function PlanPrices(props) {
     const [time,setTime] = useState([])
 
     const [day,setDay]=useState()
+
+    const getTime = (times)=>{
+        var result = [];
+        for (var i = 0; i < times.length - 1; i++) {
+            var start = new Date("1970-01-01 " + times[i]);
+            var end = new Date("1970-01-01 " + times[i + 1]);
+            while (start <= end) {
+            result.push(start.toTimeString().slice(0, 5));
+            start.setMinutes(start.getMinutes() + 61);
+            }
+        }
+        setTime(result)
+    }
     
     const handleChange=(e)=>{
         // console.log(e.target.value.toLowerCase())
         setTime(props?.dates[e.target.value.toLowerCase()])
         
         setDay(e.target.value.toLowerCase())
-
+        
         console.log(credentials)
     }
     
@@ -44,6 +57,12 @@ export default function PlanPrices(props) {
 
     }
     ,[time])
+    useEffect(() => {
+        
+        getTime(time)  
+       
+
+    },[day])
 
     const selectTime = (e) => {
         setCredentials((prev) => ({ ...prev,[e.target.id]: e.target.value,day:day}));
