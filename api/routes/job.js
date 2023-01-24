@@ -4,6 +4,7 @@ const router = require("express").Router();
 const mongoose = require('mongoose');
 
 
+
 // creat job
 router.post("/", async(req, res) => {
     const newJob = new Job(req.body);
@@ -109,5 +110,10 @@ router.get('/findbyownerid', auth, async(req, res) => {
         res.status(500).send(err);
     }
 });
+
+
+
+
+
 
 module.exports = router;

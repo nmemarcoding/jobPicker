@@ -2,7 +2,7 @@ const Job = require('../models/Job');
 const Order = require('../models/Order');
 const router = require("express").Router();
 const moment = require('moment');
-const auth = require('../middlewear/auth');
+const stripe = require("stripe")("sk_test_51MSPoNCDDzqrs9GtQeixUdo8zLysPfC7dXVO4WvHxCaTMfb7WtPVcR05nj4o3ohD5Wqhkk1GZMtJ51MlCTcegDwD00lejp6Z9s");
 
 // creat order
 // router.post("/", async(req, res) => {
@@ -108,5 +108,28 @@ router.post("/", async(req, res) => {
         res.status(500).json(err.message);
     }
 });
+
+const stripeChargeCallback = res => (stripeErr, stripeRes) => {
+    if (stripeErr) {
+
+        res.status(200).send(stripeErr.raw.message);
+    } else {
+        res.status(200).send("Payment Successful");
+    }
+};
+
+router.post('/payment', async(req, res) => {
+    try {
+        const body = {
+            source: req.body.token.id,
+            amount: req.body.amount,
+            currency: "usd"
+        };
+        stripe.charges.create(body, stripeChargeCallback(res));
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err);
+    }
+})
 
 module.exports = router;
