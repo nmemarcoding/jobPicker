@@ -4,6 +4,7 @@ import moment from 'moment'
 import { useStateValue } from '../../../StateProvider';
 import { useNavigate } from "react-router-dom";
 import {publicRequest} from '../../../hooks/requestMethods'
+import StripeCheckout from 'react-stripe-checkout';
 
 
 
@@ -23,11 +24,13 @@ export default function PlanPrices(props) {
         day:undefined,
         
     })
+    const [body,setBody] = useState()
      
     
     const [time,setTime] = useState([])
 
     const [day,setDay]=useState()
+    const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
 
     const getTime = (times)=>{
         var result = [];
@@ -71,6 +74,24 @@ export default function PlanPrices(props) {
     useEffect(() => {
         console.log(credentials)
     },[credentials])
+    const onToken = token => {
+        const body = {
+          amount: props.price * 100,
+          token: token
+        }
+        setBody(body)
+    };
+
+    useEffect(() =>{
+        publicRequest.post('order/payment',body).then((res)=>{
+            console.log(res);
+            alert(res.data);
+        
+        }).catch((e)=>{
+            console.log(e)
+            window.alert(e);
+        })
+    },[body] )
 
     const submitOrder = (e)=>{
         if(!user?.id){
@@ -79,7 +100,7 @@ export default function PlanPrices(props) {
             e.preventDefault();
             console.log(credentials)
             publicRequest.post('order',credentials).then((res)=>{
-                
+                window.alert(`Your Order Submited For ${res.data.day} at ${res.data.time}`)
                
                 typeof res.data !== 'object' && window.alert(res.data)
             
@@ -121,6 +142,15 @@ export default function PlanPrices(props) {
             </select>
             <hr></hr>
             <br></br>
+            <StripeCheckout
+                name="Job Picker"
+                description={`Your total is $${props.price}`}
+                amount={props.price * 100} // convert the price to cents
+                token={onToken}
+                stripeKey="pk_test_51MSPoNCDDzqrs9GtooTYQ8zt04tc10ZbhtozeU7GVAtwjYwCgqoPPFValOf4esCo0CmjJqIQWjd2eXuMAKFKDDjG00mCa0TptR"
+            >
+                <button>Pay with Stripe</button>
+            </StripeCheckout>
             
             <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}} onClick={submitOrder}>Continue</button>
         </div>
