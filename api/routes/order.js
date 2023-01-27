@@ -4,36 +4,7 @@ const router = require("express").Router();
 const moment = require('moment');
 const stripe = require("stripe")("sk_test_51MSPoNCDDzqrs9GtQeixUdo8zLysPfC7dXVO4WvHxCaTMfb7WtPVcR05nj4o3ohD5Wqhkk1GZMtJ51MlCTcegDwD00lejp6Z9s");
 
-// creat order
-// router.post("/", async(req, res) => {
 
-
-//     try {
-//         const job = await Job.find({
-//             _id: req.body.job,
-//             [req.body.day]: { "$in": [req.body.time] }
-//         })
-
-//         if (job.length) {
-//             const avaliableTime = await Order.find({ job: req.body.job, time: req.body.time, day: req.body.day })
-//             if (!avaliableTime.length) {
-//                 const newOrder = new Order({...req.body, owner: job[0].owner.toString() });
-//                 const savedOrder = await newOrder.save();
-//                 res.status(200).json(savedOrder);
-//             } else {
-//                 res.status(200).json(`${req.body.day} ${req.body.time} is tooken look for an other time`);
-//             }
-
-//         } else {
-//             res.status(200).json(`change your time there is no avalable job at ${req.body.day} ${req.body.time}`);
-//         }
-//         // res.status(200).json(job);
-
-//     } catch (err) {
-//         console.log(err)
-//         res.status(500).json(err.message);
-//     }
-// });
 
 // Get order with customer id 
 router.get("/find/customer/:id", async(req, res) => {
@@ -60,7 +31,7 @@ router.get("/find/owner/:id", async(req, res) => {
 });
 
 
-// test
+// creat order
 router.post("/", async(req, res) => {
     try {
         // Find the job associated with the order
@@ -69,7 +40,8 @@ router.post("/", async(req, res) => {
         // Check if the business is open at the specified time
         const isOpen = job.isBusinessOpen(req.body.day, req.body.time);
         if (!isOpen) {
-            return res.status(400).json({ message: "The business is not open at the specified time." });
+            
+            return res.status(200).json({ message: "The business is not open at the specified time." });
         }
 
         // Check if there are any existing orders at the specified time
@@ -95,12 +67,38 @@ router.post("/", async(req, res) => {
             ],
         });
         if (existingOrders.length > 0) {
-            return res.status(400).json({ message: "There is already an order at the specified time." });
+            console.log("There is already an order at the specified time.")
+            return res.status(200).json({ message: "There is already an order at the specified time." });
         }
-
-        const newOrder = new Order({...req.body, owner: job.owner });
-        const savedOrder = await newOrder.save();
-        res.status(200).json(savedOrder);
+      
+        const body = {
+            source: req?.body?.body?.token?.id,
+            amount: req?.body?.body?.amount,
+            currency: "usd"
+        };
+        
+        // stripe.charges.create(body, ress => (stripeErr, stripeRes) => {
+        //     clonsole.log(ress)
+        //     if (stripeErr) {
+                
+        //         res.status(200).send(stripeErr.raw.message);
+        //     } else {
+        //         console.log("hereeeeeee")
+        //         const newOrder = new Order({...req.body, owner: job.owner });
+        //         const savedOrder =newOrder.save();
+                
+        //         res.status(200).send("Payment Successful");
+        //     }
+        // });
+        stripe.charges.create(body)
+        .then(data=>{
+            if(data.status === "succeeded"){
+                const newOrder = new Order({...req.body, owner: job.owner });
+                const savedOrder =newOrder.save();
+                res.status(200).send("Payment Successful");
+            }
+        })
+       
 
 
     } catch (err) {
@@ -114,6 +112,9 @@ const stripeChargeCallback = res => (stripeErr, stripeRes) => {
 
         res.status(200).send(stripeErr.raw.message);
     } else {
+        const newOrder = new Order({...req.body, owner: job.owner });
+        const savedOrder =newOrder.save();
+        res.status(200).json(savedOrder);
         res.status(200).send("Payment Successful");
     }
 };
@@ -121,8 +122,8 @@ const stripeChargeCallback = res => (stripeErr, stripeRes) => {
 router.post('/payment', async(req, res) => {
     try {
         const body = {
-            source: req.body.token.id,
-            amount: req.body.amount,
+            source: req?.body?.token?.id,
+            amount: req?.body?.amount,
             currency: "usd"
         };
         stripe.charges.create(body, stripeChargeCallback(res));
