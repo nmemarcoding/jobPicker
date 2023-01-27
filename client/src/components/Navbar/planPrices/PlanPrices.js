@@ -24,7 +24,7 @@ export default function PlanPrices(props) {
         day:undefined,
         
     })
-    const [body,setBody] = useState()
+    const [body,setBody] = useState({})
      
     
     const [time,setTime] = useState([])
@@ -79,36 +79,31 @@ export default function PlanPrices(props) {
           amount: props.price * 100,
           token: token
         }
-        setBody(body)
-    };
-
-    useEffect(() =>{
-        publicRequest.post('order/payment',body).then((res)=>{
-            console.log(res);
-            alert(res.data);
-        
-        }).catch((e)=>{
-            console.log(e)
-            window.alert(e);
-        })
-    },[body] )
-
-    const submitOrder = (e)=>{
+        setCredentials((prev) => ({ ...prev,["body"]:body}));
+        console.log(credentials.body)
         if(!user?.id){
             navigate("/login")
         }else{
-            e.preventDefault();
+            
             console.log(credentials)
             publicRequest.post('order',credentials).then((res)=>{
-                window.alert(`Your Order Submited For ${res.data.day} at ${res.data.time}`)
+                console.log(res)
+                window.alert(`Your Order Submited For ${credentials.day} at ${credentials.time}`)
                
                 typeof res.data !== 'object' && window.alert(res.data)
             
             }).catch((e)=>{
                  
-                window.alert(e.response.data.message);
+                console.log(e);
             })
         }
+        
+    };
+
+   
+
+    const submitOrder = (e)=>{
+        
     }
         
     return (
@@ -149,10 +144,11 @@ export default function PlanPrices(props) {
                 token={onToken}
                 stripeKey="pk_test_51MSPoNCDDzqrs9GtooTYQ8zt04tc10ZbhtozeU7GVAtwjYwCgqoPPFValOf4esCo0CmjJqIQWjd2eXuMAKFKDDjG00mCa0TptR"
             >
-                <button>Pay with Stripe</button>
+                
+                <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}} onClick={submitOrder}>Continue</button>
             </StripeCheckout>
             
-            <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}} onClick={submitOrder}>Continue</button>
+            
         </div>
         
         </div>
