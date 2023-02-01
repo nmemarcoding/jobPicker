@@ -40,8 +40,9 @@ router.post("/", async(req, res) => {
         // Check if the business is open at the specified time
         const isOpen = job.isBusinessOpen(req.body.day, req.body.time);
         if (!isOpen) {
-            
-            return res.status(200).json({ message: "The business is not open at the specified time." });
+            // console log The business is not open at the specified time.
+            console.log("The business is not open at the specified time.")
+            return res.status(200).json("The business is not open at the specified time." );
         }
 
         // Check if there are any existing orders at the specified time
@@ -68,7 +69,7 @@ router.post("/", async(req, res) => {
         });
         if (existingOrders.length > 0) {
             console.log("There is already an order at the specified time.")
-            return res.status(200).json({ message: "There is already an order at the specified time." });
+            return res.status(200).json("There is already an order at the specified time.");
         }
       
         const body = {
