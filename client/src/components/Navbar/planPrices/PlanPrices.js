@@ -89,7 +89,7 @@ export default function PlanPrices(props) {
             console.log(credentials)
             publicRequest.post('order',credentials).then((res)=>{
                 console.log(res)
-                window.alert(`Your Order Submited For ${credentials.day} at ${credentials.time}`)
+                window.alert(res.data)
                
                 typeof res.data !== 'object' && window.alert(res.data)
             
