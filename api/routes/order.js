@@ -77,6 +77,7 @@ router.post("/", async(req, res) => {
             amount: req?.body?.body?.amount,
             currency: "usd"
         };
+        console.log(body)
         
         // stripe.charges.create(body, ress => (stripeErr, stripeRes) => {
         //     clonsole.log(ress)
