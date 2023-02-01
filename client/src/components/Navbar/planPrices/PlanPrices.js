@@ -74,12 +74,13 @@ export default function PlanPrices(props) {
     useEffect(() => {
         console.log(credentials)
     },[credentials])
+
     const onToken = token => {
         const body = {
           amount: props.price * 100,
           token: token
         }
-        setCredentials((prev) => ({ ...prev,["body"]:body}));
+        setCredentials((prev) => ({ ...prev,body:body}));
         console.log(credentials.body)
         if(!user?.id){
             navigate("/login")
@@ -102,9 +103,10 @@ export default function PlanPrices(props) {
 
    
 
-    const submitOrder = (e)=>{
-        
-    }
+    
+
+
+
         
     return (
         <div className="planPrice_container ">
@@ -145,7 +147,7 @@ export default function PlanPrices(props) {
                 stripeKey="pk_test_51MSPoNCDDzqrs9GtooTYQ8zt04tc10ZbhtozeU7GVAtwjYwCgqoPPFValOf4esCo0CmjJqIQWjd2eXuMAKFKDDjG00mCa0TptR"
             >
                 
-                <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}} onClick={submitOrder}>Continue</button>
+                <button className="btn glass"style={{textAlign:"center" ,width:"100%" ,marginTop:"20px",backgroundColor:"#1DBF73",padding:"5px",color:"white",borderRadius:"3px"}} >Continue</button>
             </StripeCheckout>
             
             
