@@ -12,6 +12,7 @@ import YourOrders from "./pages/HomePage/YourOrders/YourOrders";
 import useGeoLocation from "./hooks/useGeoLocation";
 import {userInfo} from "./hooks/getUserInfo"
 import { useEffect } from "react";
+import EditJobs from "./pages/HomePage/EditJob/EditJob"
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       {user?<Route  path="/postjob" element={<PostJobPage/>}/>:<Route path="/postjob" element={<LoginPage/>}/>} 
       {user?<Route  path="/yourjobs" element={<OwnerJobs/>}/>:<Route path="/yourjobs" element={<LoginPage/>}/>} 
       {user?<Route  path="/yourorders" element={<YourOrders/>}/>:<Route path="/yourorders" element={<LoginPage/>}/>}
+      {user?<Route  path="/editjob" element={<EditJobs/>}/>:<Route path="/postjob" element={<LoginPage/>}/>}
 
       <Route exact path="/" element={<HomePage/>}/>    
       

@@ -38,6 +38,7 @@ export default function Navbar() {
             <Link to="/postJob"><li><a>PostJob</a></li></Link>
             {user&&<Link to="/yourorders"><li><a>Your Orders</a></li></Link>}
             {user&&<Link to="/yourjobs"><li><a>Your Jobs</a></li></Link>}
+            {user&&<Link to="/editjob"><li><a>Edit job</a></li></Link>}
             <Link to=""><li><a>Your Profile</a></li></Link>
             <Link to="/profile"><li><a>Settings</a></li></Link>
             {user&&<Link to=""><li><a onClick={() => dispatch({ type: 'EMPTY_USER' })}>signOut</a></li></Link>}

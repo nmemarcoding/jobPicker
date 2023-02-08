@@ -72,15 +72,6 @@ export default function PlanPrices(props) {
         
     }
     useEffect(() => {
-        console.log(credentials)
-    },[credentials])
-
-    const onToken = token => {
-        const body = {
-          amount: props.price * 100,
-          token: token
-        }
-        setCredentials((prev) => ({ ...prev,body:body}));
         console.log(credentials.body)
         if(!user?.id){
             navigate("/login")
@@ -98,6 +89,16 @@ export default function PlanPrices(props) {
                 console.log(e);
             })
         }
+        
+    },[body])
+
+    const onToken = token => {
+        const body = {
+          amount: props.price * 100,
+          token: token
+        }
+        setBody(body) ;
+        setCredentials((prev) => ({ ...prev,body:body}));
         
     };
 
